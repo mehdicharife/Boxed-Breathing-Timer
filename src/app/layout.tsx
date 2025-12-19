@@ -32,12 +32,12 @@ export default function RootLayout({
             <body
                 className={`${poppins.className} antialiased text-[#022932] flex flex-col justify-between`}
             >
-                <header className='flex items-center relative py-10'>
+                <header className='flex items-center relative pt-10'>
                     <button className='absolute left-10'>
                         <Moon size={37} />
                     </button>
-                    <nav className='flex gap-x-12 grow absolute left-1/2 -translate-x-1/2'>
-                        <ul className='flex gap-x-5 font-medium'>
+                    <nav className='flex gap-x-12 grow absolute left-1/2 -translate-x-1/2 text-sm'>
+                        <ul className='flex gap-x-8 font-medium'>
                             <li>
                                 <a href='/home'>Home</a>
                             </li>
@@ -58,13 +58,13 @@ export default function RootLayout({
                             </li>
                         </ul>
                     </nav>
-                    <h1 className='text-lg font-medium absolute right-10'>
+                    <h1 className=' font-medium absolute right-10'>
                         Boxed Breathing Timer
                     </h1>
                 </header>
                 <main className="grow">{children}</main>
 
-                <footer className='bg-[#033132] h-52'></footer>
+                <footer className='bg-[#033132] h-32'></footer>
             </body>
         </html>
     );
