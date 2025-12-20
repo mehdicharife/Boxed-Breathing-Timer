@@ -20,7 +20,7 @@ const BoxedBreathinSimulator = () => {
 		count: (4 * 4 * breathingIntervalInSeconds) / 1000,
 	});
 	const [breathingInstruction, setBreathingInstruction] = useState("");
-
+	const timeouts = useRef({});
 	useEffect(() => {
 		if (localStorage.getItem("resetting") === "true") {
 			return;
@@ -37,41 +37,48 @@ const BoxedBreathinSimulator = () => {
 			return;
 		}
 
-		setTimeout(() => {
-			if (localStorage.getItem("resetting") === "true") {
-				return;
-			}
-			setCounter({ count: counter.count - 1 });
-		}, 1000);
+		timeouts.current = {
+			...timeouts,
+			counter: setTimeout(() => {
+				if (localStorage.getItem("resetting") === "true") {
+					return;
+				}
+				setCounter({ count: counter.count - 1 });
+			}, 1000),
+		};
 	}, [counter]);
 
 	useEffect(() => {
-		if (localStorage.getItem("resetting") === "true") {
-			return;
-		}
 		if (breathingInstruction === "") {
 			return;
 		}
-		if (counter.count === 0) {
-			setBreathingInstruction("");
-			return;
-		}
-		setTimeout(() => {
-			if (localStorage.getItem("resetting") === "true") {
-				return;
-			}
-			setBreathingInstruction(
-				breathingInstruction === ""
-					? breathingInstructions[0]
-					: breathingInstructions[
-							(breathingInstructions.indexOf(
-								breathingInstruction
-							) +
-								1) %
-								4
-					  ]
-			);
-		}, breathingIntervalInSeconds);
+		timeouts.current = {
+			...timeouts.current,
+			breathingInstruction: setTimeout(() => {
+				if (localStorage.getItem("resetting") === "true") {
+					setBreathingInstruction("");
+					setTimeout(() => {
+						localStorage.setItem("resetting", "true");
+					}, 2);
+					return;
+				}
+				if (counter.count <= breathingIntervalInSeconds / 1000) {
+					setBreathingInstruction("");
+					return;
+				}
+				setBreathingInstruction(
+					breathingInstruction === ""
+						? breathingInstructions[0]
+						: breathingInstructions[
+								(breathingInstructions.indexOf(
+									breathingInstruction
+								) +
+									1) %
+									4
+						  ]
+				);
+			}, breathingIntervalInSeconds),
+		};
 	}, [breathingInstruction]);
 
 	const handleStartClick = () => {
@@ -91,7 +98,9 @@ const BoxedBreathinSimulator = () => {
 
 	const handleReset = () => {
 		localStorage.setItem("resetting", "true");
-
+		
+		clearTimeout(timeouts.current.breathingInstruction);
+		clearTimeout(timeouts.current.counter);
 		setTimeout(() => {
 			setCounter({
 				count: (4 * 4 * breathingIntervalInSeconds) / 1000,
@@ -99,7 +108,7 @@ const BoxedBreathinSimulator = () => {
 			setBreathingInstruction("");
 			dotRef.current.style.left = 0;
 			dotRef.current.style.top = 0;
-		}, 30);
+		}, 10);
 	};
 
 	const moveDot = (startTime: number) => {
