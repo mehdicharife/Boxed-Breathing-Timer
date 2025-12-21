@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -5,7 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 const breathingIntervalInSeconds = 1000;
 
 const clockify = (number: number) => (number < 10 ? "0" + number : number + "");
-const timify = (seconds) => {
+const timify = (seconds: number) => {
 	const minutes = Math.floor(seconds / 60);
 	const secs = seconds % 60;
 
@@ -14,13 +15,16 @@ const timify = (seconds) => {
 
 const breathingInstructions = ["Breathe In", "Hold", "Breathe Out", "Hold "];
 const BoxedBreathinSimulator = () => {
-	const dotRef = useRef<HTMLSpanElement>(null);
-	const boxRef = useRef<HTMLDivElement>(null);
+	const dotRef = useRef<HTMLSpanElement>(document.createElement("div"));
+	const boxRef = useRef<HTMLDivElement>(document.createElement("div"));
 	const [counter, setCounter] = useState({
 		count: (4 * 4 * breathingIntervalInSeconds) / 1000,
 	});
 	const [breathingInstruction, setBreathingInstruction] = useState("");
-	const timeouts = useRef({});
+	const timeouts = useRef<{
+		counter?: NodeJS.Timeout;
+		breathingInstruction?: NodeJS.Timeout;
+	}>({});
 	useEffect(() => {
 		if (localStorage.getItem("resetting") === "true") {
 			return;
@@ -98,7 +102,7 @@ const BoxedBreathinSimulator = () => {
 
 	const handleReset = () => {
 		localStorage.setItem("resetting", "true");
-		
+
 		clearTimeout(timeouts.current.breathingInstruction);
 		clearTimeout(timeouts.current.counter);
 		setTimeout(() => {
@@ -106,8 +110,8 @@ const BoxedBreathinSimulator = () => {
 				count: (4 * 4 * breathingIntervalInSeconds) / 1000,
 			});
 			setBreathingInstruction("");
-			dotRef.current.style.left = 0;
-			dotRef.current.style.top = 0;
+			dotRef.current.style.left = "0";
+			dotRef.current.style.top = "0";
 		}, 10);
 	};
 
