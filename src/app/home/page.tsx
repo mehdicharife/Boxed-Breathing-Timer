@@ -3,7 +3,7 @@ import BoxedBreathinSimulator from "../components/vectors/BoxedBreathinSimulator
 
 const page = () => {
 	return (
-		<div className=" flex justify-center items-center">
+		<div className="flex justify-center items-center mt-12">
 			<div>
 		<BoxedBreathinSimulator/>
 			</div>

@@ -30,7 +30,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${poppins.className} antialiased text-[#022932] `}
+				className={`${poppins.className} antialiased text-[#022932] relative`}
 			>
 				<header className="flex items-center relative h-18">
 					<button className="absolute left-10">
@@ -64,7 +64,7 @@ export default function RootLayout({
 				</header>
 				<main>{children}</main>
 
-				<footer className="bg-[#033132] h-32"></footer>
+				<footer className="bg-[#033132] h-32 w-full bottom-0"></footer>
 			</body>
 		</html>
 	);
