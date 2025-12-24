@@ -3,7 +3,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-const breathingIntervalInSeconds = 1000;
+const breathingIntervalInSeconds = 5000;
 
 const clockify = (number: number) => (number < 10 ? "0" + number : number + "");
 const timify = (seconds: number) => {
