@@ -1,0 +1,7 @@
+TODOs:
+
+1. Alternatives page
+2. Footer
+3. Footer position fix
+4. Donate feature
+5. Simulator extension (music selection, offering the choice of repeating the exercise or checking alternatives after ending it)
