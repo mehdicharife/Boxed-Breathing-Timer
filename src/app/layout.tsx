@@ -44,7 +44,13 @@ export default function RootLayout({
 						</ul>
 						<ul className="flex gap-x-5 font-medium">
 							<li>
-								<a href="/about">About us</a>
+								<a
+									href="https://paypal.me/mehdicharife"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Support us
+								</a>
 							</li>
 						</ul>
 					</nav>
@@ -82,7 +88,13 @@ export default function RootLayout({
 						</ul>
 						<ul className="flex gap-x-5">
 							<li>
-								<a href="/about">About us</a>
+								<a
+									href="https://paypal.me/mehdicharife"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Support us
+								</a>
 							</li>
 						</ul>
 					</nav>
