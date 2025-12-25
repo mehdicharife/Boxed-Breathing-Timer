@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 
 const breathingIntervalInSeconds = 5000;
 
@@ -15,8 +15,8 @@ const timify = (seconds: number) => {
 
 const breathingInstructions = ["Breathe In", "Hold", "Breathe Out", "Hold "];
 const BoxedBreathinSimulator = () => {
-	const dotRef = useRef<HTMLSpanElement>(document.createElement("div"));
-	const boxRef = useRef<HTMLDivElement>(document.createElement("div"));
+	const dotRef = useRef<HTMLSpanElement>(null) as RefObject<HTMLSpanElement>;
+	const boxRef = useRef<HTMLDivElement >(null) as RefObject<HTMLDivElement>;
 	const [counter, setCounter] = useState({
 		count: (4 * 4 * breathingIntervalInSeconds) / 1000,
 	});

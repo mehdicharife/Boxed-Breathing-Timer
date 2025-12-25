@@ -214,7 +214,7 @@ const page = () => {
 						sound. This rhythmic, side-to-side pattern engages
 						both brain hemispheres and helps process emotions
 						while calming the nervous system.
-					</p>
+					</p>			
 					<p>
 						Gently tap your knees or shoulders in an
 						alternating left-right pattern, or move your eyes

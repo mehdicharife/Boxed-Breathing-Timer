@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Moon from "./components/vectors/Moon";
 
-
 const poppins = Poppins({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
@@ -49,13 +48,45 @@ export default function RootLayout({
 							</li>
 						</ul>
 					</nav>
-					<h1 className=" font-medium absolute right-10">
+					<h1 className="font-medium absolute right-10">
 						Boxed Breathing Timer
 					</h1>
 				</header>
 				<main>{children}</main>
 
-				<footer className="bg-[#033132] h-32 w-full -bottom-32 absolute"></footer>
+				<footer className="bg-[#033132] text-white h-32 w-full -bottom-32 absolute flex justify-between px-10 items-center">
+					<div>
+						<a
+							href="/home"
+							className="font-medium block mb-1"
+						>
+							Boxed Breathing Timer
+						</a>
+						<p className="text-xs">Copyright @ 2026</p>
+					</div>
+					<nav className="flex gap-x-8 text-[13px]">
+						<ul className="flex gap-x-8 ">
+							<li>
+								<a href="/home">Home</a>
+							</li>
+						</ul>
+						<ul className="flex gap-x-5">
+							<li>
+								<a href="/the-science">The science</a>
+							</li>
+						</ul>
+						<ul className="flex gap-x-5">
+							<li>
+								<a href="/alternatives">Alternatives</a>
+							</li>
+						</ul>
+						<ul className="flex gap-x-5">
+							<li>
+								<a href="/about">About us</a>
+							</li>
+						</ul>
+					</nav>
+				</footer>
 			</body>
 		</html>
 	);
