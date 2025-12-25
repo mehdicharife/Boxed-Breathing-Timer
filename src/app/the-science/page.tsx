@@ -6,7 +6,7 @@ import BP from "../components/vectors/vectors/BP";
 
 const page = () => {
 	return (
-		<div className="flex justify-center pt-8 mb-8">
+		<div className="flex justify-center pt-8 ">
 			<div className="[&>p]:w-[50ch] [&>p]:text-sm [&>p]:text-justify flex flex-col items-center">
 				<h1 className="text-2xl font-bold text-center mb-8">
 					The Science Behind Boxed Breathing

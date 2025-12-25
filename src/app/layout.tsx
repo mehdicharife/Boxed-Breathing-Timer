@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Moon from "./components/vectors/Moon";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
-});
 
 const poppins = Poppins({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -64,7 +55,7 @@ export default function RootLayout({
 				</header>
 				<main>{children}</main>
 
-				<footer className="bg-[#033132] h-32 w-full bottom-0"></footer>
+				<footer className="bg-[#033132] h-32 w-full -bottom-32 absolute"></footer>
 			</body>
 		</html>
 	);

@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
-html,
+html {
+    color: "#022932";
+    min-height: 100%;
+}
 body {
     height: 100%;
-    color: "#022932";
+    min-height:  calc(100vh - var(--spacing) * 32);
+    padding-bottom: 1.5rem; 
 }
