@@ -62,9 +62,9 @@ const page = () => {
 					The method gets its name from visualizing a box: you
 					breathe in for four counts, hold your breath for four
 					counts, exhale for four counts, and hold empty for four
-					counts, then repeat. This equal timing creates a "box"
+					counts, then repeat. This equal timing creates a &ldquo;box&rdquo;
 					shape when you imagine each side representing one step.
-					It's commonly used by athletes, military personnel, and
+					It&apos;s commonly used by athletes, military personnel, and
 					anyone dealing with anxiety or stress because it
 					activates the parasympathetic nervous system, helping
 					to calm the body and mind. The technique is easy to do
@@ -79,9 +79,9 @@ const page = () => {
 					The method gets its name from visualizing a box: you
 					breathe in for four counts, hold your breath for four
 					counts, exhale for four counts, and hold empty for four
-					counts, then repeat. This equal timing creates a "box"
+					counts, then repeat. This equal timing creates a &ldquo;box&quot;
 					shape when you imagine each side representing one step.
-					It's commonly used by athletes, military personnel, and
+					It&apos;s commonly used by athletes, military personnel, and
 					anyone dealing with anxiety or stress because it
 					activates the parasympathetic nervous system, helping
 					to calm the body and mind. The technique is easy to do
@@ -154,10 +154,10 @@ const page = () => {
 					While the science behind box breathing reveals complex
 					physiological mechanisms, the beauty of this technique
 					lies in its simplicity and accessibility. Whether
-					you're preparing for a high-pressure presentation,
+					you&apo;sre preparing for a high-pressure presentation,
 					recovering from a stressful encounter, or simply taking
 					a midday break to reset your nervous system, box
-					breathing offers a science-backed tool that's always
+					breathing offers a science-backed tool that&pos;s always
 					available to you.
 				</p>
 

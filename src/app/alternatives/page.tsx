@@ -178,7 +178,7 @@ const page = () => {
 						vibrations throughout your head, chest, and body.
 						These vibrations, combined with the extended
 						exhale required for humming, activate your vagus
-						nerve and trigger your body's natural relaxation
+						nerve and trigger your body&pos;s natural relaxation
 						response.
 					</p>
 					<p>
