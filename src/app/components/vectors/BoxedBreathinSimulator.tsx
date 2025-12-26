@@ -191,7 +191,7 @@ const BoxedBreathinSimulator = () => {
 		return (
 			<>
 				<div
-					className="w-[380px] border-2 border-blue-950 rounded-sm flex flex-col justify-center mb-8 py-8 relative "
+					className="w-[380px] border-2 border-outline rounded-sm flex flex-col justify-center mb-8 py-8 relative "
 					ref={boxRef}
 				>
 					<div className="bg-[#005B70] text-white w-[110px] h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
@@ -212,7 +212,7 @@ const BoxedBreathinSimulator = () => {
 				{breathingInstruction === "" && (
 					<button
 						onClick={handleStartClick}
-						className="w-full bg-[#022932] text-white rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer"
+						className="w-full bg-primary text-white rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer tracking-wide"
 					>
 						Start
 					</button>

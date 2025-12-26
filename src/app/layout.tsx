@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Moon from "./components/vectors/Moon";
+import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
 
 const poppins = Poppins({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -20,29 +21,27 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${poppins.className} antialiased text-[#022932] relative`}
+				className={`${poppins.className} antialiased bg-surface text-onSurface relative`}
 			>
 				<header className="flex items-center relative h-18">
-					<button className="absolute left-10">
-						<Moon size={37} />
-					</button>
-					<nav className="flex gap-x-12 grow absolute left-1/2 -translate-x-1/2  text-sm">
-						<ul className="flex gap-x-8 font-medium">
+					<DarkModeSwitchButton />
+					<nav className="flex gap-x-12 grow absolute left-1/2 -translate-x-1/2 text-[13.5px] [&_a]:font-medium dark:[&_a]:font-normal [&_a]:uppercase [&_a]:tracking-wider">
+						<ul className="flex gap-x-8">
 							<li>
 								<a href="/home">Home</a>
 							</li>
 						</ul>
-						<ul className="flex gap-x-5 font-medium">
+						<ul className="flex gap-x-5">
 							<li>
 								<a href="/the-science">The science</a>
 							</li>
 						</ul>
-						<ul className="flex gap-x-5 font-medium">
+						<ul className="flex gap-x-5">
 							<li>
 								<a href="/alternatives">Alternatives</a>
 							</li>
 						</ul>
-						<ul className="flex gap-x-5 font-medium">
+						<ul className="flex gap-x-5">
 							<li>
 								<a
 									href="https://paypal.me/mehdicharife"
@@ -60,7 +59,7 @@ export default function RootLayout({
 				</header>
 				<main>{children}</main>
 
-				<footer className="bg-[#033132] text-white h-32 w-full -bottom-32 absolute flex justify-between px-10 items-center">
+				<footer className="bg-footer text-onFooter h-32 w-full -bottom-32 absolute flex justify-between px-10 items-center">
 					<div>
 						<a
 							href="/home"

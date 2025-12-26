@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-surface: white;
+    --color-onSurface: #022932;
+    --color-outline: lab(15.6723% 8.86233 -32.2945);
+    --color-primary: rgb(2, 41, 50);
+    --color-footer: #033132;
+    --color-onFooter: var(--color-surface)
+}
+
+body.dark {
+    --color-surface: #033132;
+    --color-onSurface: #d8f7fd;
+    --color-outline: lab(73 -20.17 -8.47);
+    --color-primary: #044f60;
+    --color-footer: #102a2b;
+    --color-onFooter: var(--color-onSurface);
+}
+
 html {
     color: "#022932";
     min-height: 100%;
