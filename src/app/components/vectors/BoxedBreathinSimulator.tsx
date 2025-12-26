@@ -3,7 +3,7 @@
 
 import React, { RefObject, useEffect, useRef, useState } from "react";
 
-const breathingIntervalInSeconds = 5000;
+const breathingIntervalInSeconds = 1000;
 
 const clockify = (number: number) => (number < 10 ? "0" + number : number + "");
 const timify = (seconds: number) => {
@@ -16,7 +16,7 @@ const timify = (seconds: number) => {
 const breathingInstructions = ["Breathe In", "Hold", "Breathe Out", "Hold "];
 const BoxedBreathinSimulator = () => {
 	const dotRef = useRef<HTMLSpanElement>(null) as RefObject<HTMLSpanElement>;
-	const boxRef = useRef<HTMLDivElement >(null) as RefObject<HTMLDivElement>;
+	const boxRef = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>;
 	const [counter, setCounter] = useState({
 		count: (4 * 4 * breathingIntervalInSeconds) / 1000,
 	});
@@ -25,6 +25,8 @@ const BoxedBreathinSimulator = () => {
 		counter?: NodeJS.Timeout;
 		breathingInstruction?: NodeJS.Timeout;
 	}>({});
+	const [showFinishMessage, setShowFinishMessage] = useState(false);
+
 	useEffect(() => {
 		if (localStorage.getItem("resetting") === "true") {
 			return;
@@ -37,6 +39,7 @@ const BoxedBreathinSimulator = () => {
 				setCounter({
 					count: (4 * 4 * breathingIntervalInSeconds) / 1000,
 				});
+				setShowFinishMessage(true);
 			}
 			return;
 		}
@@ -183,45 +186,57 @@ const BoxedBreathinSimulator = () => {
 			}
 		}, 1);
 	};
-	return (
-		<>
-			<div
-				className="w-[380px] border-2 border-blue-950 rounded-sm flex flex-col justify-center mb-8 py-8 relative "
-				ref={boxRef}
-			>
-				<div className="bg-[#005B70] text-white w-[110px] h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
-					<h1 className="text-sm font-medium">
-						{breathingInstruction}
-					</h1>
-				</div>
-				<span
-					ref={dotRef}
-					className="absolute block bg-blue-400 w-5 h-5 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50"
-				></span>
-				{breathingInstruction !== "" && (
-					<div className="text-sm font-medium border-2 border-blue-800 py-1/2 px-3 rounded-sm absolute -top-4 -right-7 rotate-17 bg-white">
-						{timify(counter.count)}
+
+	if (!showFinishMessage) {
+		return (
+			<>
+				<div
+					className="w-[380px] border-2 border-blue-950 rounded-sm flex flex-col justify-center mb-8 py-8 relative "
+					ref={boxRef}
+				>
+					<div className="bg-[#005B70] text-white w-[110px] h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
+						<h1 className="text-sm font-medium">
+							{breathingInstruction}
+						</h1>
 					</div>
+					<span
+						ref={dotRef}
+						className="absolute block bg-blue-400 w-5 h-5 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50"
+					></span>
+					{breathingInstruction !== "" && (
+						<div className="text-sm font-medium border-2 border-blue-800 py-1/2 px-3 rounded-sm absolute -top-4 -right-7 rotate-17 bg-white">
+							{timify(counter.count)}
+						</div>
+					)}
+				</div>
+				{breathingInstruction === "" && (
+					<button
+						onClick={handleStartClick}
+						className="w-full bg-[#022932] text-white rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer"
+					>
+						Start
+					</button>
 				)}
-			</div>
-			{breathingInstruction === "" && (
-				<button
-					onClick={handleStartClick}
-					className="w-full bg-[#022932] text-white rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer"
-				>
-					Start
-				</button>
-			)}
-			{breathingInstruction !== "" && (
-				<button
-					onClick={handleReset}
-					className="w-full border-2 border-[#004E60] rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer"
-				>
-					Reset
-				</button>
-			)}
-		</>
-	);
+				{breathingInstruction !== "" && (
+					<button
+						onClick={handleReset}
+						className="w-full border-2 border-[#004E60] rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer"
+					>
+						Reset
+					</button>
+				)}
+			</>
+		);
+	}
+
+	return <div className="mt-12">
+
+		<h1 className="text-xl font-medium text-center mb-4 ">Still feeling stressed?</h1>
+		<div className="flex justify-center items-center gap-x-5">
+			<a onClick={() => setShowFinishMessage(false)} className="w-52 h-10 rounded-sm bg-[#005B70] text-white text-sm  hover:cursor-pointer flex justify-center items-center">Redo the exercise</a>
+			<a href="/alternatives" className="w-54 h-10 rounded-sm border-2 text-sm font-medium hover:cursor-pointer flex justify-center items-center">Check other techniques</a>
+		</div>
+	</div>
 };
 
 export default BoxedBreathinSimulator;
