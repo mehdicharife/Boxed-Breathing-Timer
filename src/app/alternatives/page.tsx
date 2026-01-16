@@ -7,9 +7,9 @@ import BilateralStimulationIcon from "../components/vectors/vectors/BilateralSti
 
 const page = () => {
 	return (
-		<div className="pt-8">
-			<div className="w-[50ch] m-auto mb-10 text-center">
-				<h1 className="text-2xl font-bold mb-3">
+		<div className="pt-8 [&_svg]:dark:filter-[brightness(0)_saturate(100%)_invert(67%)_sepia(23%)_saturate(475%)_hue-rotate(135deg)_brightness(100%)_contrast(94%)]	">
+			<div className="w-[88vw] max-w-[50ch] m-auto mb-10 text-center ">
+				<h1 className="text-2xl text-title font-bold mb-3">
 					Alternative real time techniques for combating stress
 					and anxiety
 				</h1>
@@ -20,61 +20,68 @@ const page = () => {
 				</p>
 			</div>
 
-			<div className="w-full flex gap-x-10  justify-center m-auto mb-24 [&>p]:text-[#003743]">
+			<div className="w-full flex flex-wrap gap-x-10 gap-y-10  justify-center m-auto mb-24 [&>p]:text-[#003743] [&>a]:shrink-0 [&_a]:hover:dark:bg-[#234c5e] [&_a]:hover:dark:border-none">
 				<a
-					className="w-[190px] h-[170px] border-2 border-[#0087A6] rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer"
+					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer group"
 					href="#physiological-sigh"
 				>
-					<p className="text-sm font-bold text-center mb-2">
+					<p className="text-sm text-title font-bold dark:font-medium text-center mb-2">
 						The Physiological Sigh
 					</p>
-					<SighIcon width="130" height="130" />
+					<SighIcon width="120" height="120" />
 				</a>
 				<a
-					className="w-[190px] h-[170px] border-2 border-[#0087A6] rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer"
+					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer hover:border-none group"
 					href="#cold-exposure"
 				>
-					<p className="text-sm font-bold text-center mb-2">
+					<p className="text-sm text-title font-bold dark:font-medium text-center mb-2 ">
 						Cold Exposure
 					</p>
-					<ColdExposureIcon width="130" height="130" />
+					<ColdExposureIcon width="90" height="110" />
 				</a>
 				<a
-					className="w-[190px] h-[170px] border-2 border-[#0087A6] rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer"
+					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer group"
 					href="#binaural-beats"
 				>
-					<p className="text-sm font-bold text-center mb-2">
+					<p className="text-sm text-title font-bold dark:font-medium text-center mb-2">
 						Binaural Beats
 					</p>
-					<BinauralBeatsIcon width="130" height="130" />
+					<BinauralBeatsIcon width="120" height="120" />
 				</a>
 				<a
-					className="w-[190px] h-[170px] border-2 border-[#0087A6] rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer"
+					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer group"
 					href="#humming"
 				>
-					<p className="text-sm font-bold text-center mb-2">
+					<p className="text-sm text-title font-bold dark:font-medium text-center mb-2">
 						Humming
 					</p>
-					<HummingIcon width="130" height="130" />
+					<HummingIcon width="120" height="120" />
 				</a>
 				<a
-					className="w-[190px] h-[170px] border-2 border-[#0087A6] rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer"
+					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer group"
 					href="#bilateral-stimulation"
 				>
-					<p className="text-sm font-bold text-center mb-2">
+					<p className="text-sm text-title font-bold dark:font-medium text-center mb-2">
 						Bilateral Stimulation
 					</p>
-					<BilateralStimulationIcon width="130" height="130" />
+					<BilateralStimulationIcon width="120" height="120" />
 				</a>
 			</div>
 
 			<section
-				className="flex justify-center items-center gap-x-48 mb-16"
+				className="flex flex-col md:flex-row items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
 				id="physiological-sigh"
 			>
-				<SighIcon width="300" height="300" className="shrink-0" />
-				<div className="w-[45ch] [&>p]:text-sm">
-					<h1 className="text-2xl font-bold mb-5">
+				<div className="shrink-0 w-[280px] md:w-[33%]">
+					<SighIcon
+						width="full"
+						height="full"
+						className="shrink-0"
+					/>
+				</div>
+
+				<div className="max-w-[45ch] [&>p]:text-sm">
+					<h1 className="text-2xl text-title font-bold mb-5">
 						The Physiological Sigh
 					</h1>
 					<p className="mb-4">
@@ -95,15 +102,14 @@ const page = () => {
 			</section>
 
 			<section
-				className="flex justify-center items-center gap-x-48 flex-row-reverse mb-12"
+				className="flex flex-col items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto] md:flex-row-reverse "
 				id="cold-exposure"
 			>
-				<ColdExposureIcon
-					width="360"
-					height="360"
-					className="shrink-0"
-				/>
-				<div className="w-[45ch] [&>p]:text-sm">
+				<div className="shrink-0 w-[280px] md:w-[33%]">
+					<ColdExposureIcon width="full" height="full" />
+				</div>
+
+				<div className="max-w-[45ch] [&>p]:text-sm">
 					<h1 className="text-2xl font-bold mb-5">
 						Cold Exposure
 					</h1>
@@ -129,15 +135,13 @@ const page = () => {
 			</section>
 
 			<section
-				className="flex justify-center items-center gap-x-48 mb-16"
+				className="flex flex-col items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto] md:flex-row"
 				id="binaural-beats"
 			>
-				<BinauralBeatsIcon
-					width="350"
-					height="350"
-					className="shrink-0"
-				/>
-				<div className="w-[45ch] [&>p]:text-sm">
+				<div className="shrink-0 w-[280px] md:w-[33%]">
+					<BinauralBeatsIcon width="full" height="full" />
+				</div>
+				<div className="max-w-[45ch] [&>p]:text-sm">
 					<h1 className="text-2xl font-bold mb-5">
 						Binaural Beats
 					</h1>
@@ -163,23 +167,22 @@ const page = () => {
 				</div>
 			</section>
 			<section
-				className="flex justify-center items-center gap-x-48 flex-row-reverse mb-12"
+				className="flex flex-col md:flex-row items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
 				id="humming"
 			>
-				<HummingIcon
-					width="360"
-					height="360"
-					className="shrink-0"
-				/>
-				<div className="w-[45ch] [&>p]:text-sm">
+				<div className="shrink-0 w-[280px] md:w-[33%]">
+					<HummingIcon width="full" height="full" />
+				</div>
+
+				<div className="max-w-[45ch] [&>p]:text-sm">
 					<h1 className="text-2xl font-bold mb-5">Humming</h1>
 					<p className="mb-4">
 						Humming is a simple vocal practice that creates
 						vibrations throughout your head, chest, and body.
 						These vibrations, combined with the extended
 						exhale required for humming, activate your vagus
-						nerve and trigger your body&pos;s natural relaxation
-						response.
+						nerve and trigger your body&pos;s natural
+						relaxation response.
 					</p>
 					<p>
 						Take a breath in through your nose, then hum on
@@ -195,15 +198,13 @@ const page = () => {
 			</section>
 
 			<section
-				className="flex justify-center items-center gap-x-48 mb-16"
+				className="flex flex-col md:flex-row-reverse items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
 				id="bilateral-stimulation"
 			>
-				<BilateralStimulationIcon
-					width="350"
-					height="350"
-					className="shrink-0"
-				/>
-				<div className="w-[45ch] [&>p]:text-sm">
+				<div className="shrink-0 w-[280px] md:w-[33%]">
+					<BilateralStimulationIcon width="full" height="full" />
+				</div>
+				<div className="max-w-[45ch] [&>p]:text-sm">
 					<h1 className="text-2xl font-bold mb-5">
 						Bilateral Stimulation
 					</h1>
@@ -214,7 +215,7 @@ const page = () => {
 						sound. This rhythmic, side-to-side pattern engages
 						both brain hemispheres and helps process emotions
 						while calming the nervous system.
-					</p>			
+					</p>
 					<p>
 						Gently tap your knees or shoulders in an
 						alternating left-right pattern, or move your eyes

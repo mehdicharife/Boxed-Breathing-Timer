@@ -1,6 +1,6 @@
 TODOs:
 
-1. Footer
-2. Donate feature
+1. Dark mode completion
 3. Simulator extension (music selection, offering the choice of repeating the exercise or checking alternatives after ending it)
-4. Dark mode
+4. change the default next logo and title
+

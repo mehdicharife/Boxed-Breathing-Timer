@@ -8,24 +8,35 @@
     --color-outline: lab(15.6723% 8.86233 -32.2945);
     --color-primary: rgb(2, 41, 50);
     --color-footer: #033132;
-    --color-onFooter: var(--color-surface)
+    --color-onFooter: var(--color-surface);
+    --color-title: var(--color-onSurface);
+    --color-paragraph: var(--color-onSurface);
+    --color-arrow: #00AED5;
+
+    --breakpoint-md: 835px;
 }
 
-body.dark {
-    --color-surface: #033132;
-    --color-onSurface: #d8f7fd;
+html.dark {
+    --color-surface: #002628;
+    --color-onSurface: #7ea8b2;
     --color-outline: lab(73 -20.17 -8.47);
     --color-primary: #044f60;
-    --color-footer: #102a2b;
-    --color-onFooter: var(--color-onSurface);
+    --color-footer: #0b1f20;
+    --color-onFooter: #cae0e4;
+    --color-title: #b4d3db;
+    --color-paragraph: #8cbac4;
+    --color-arrow: #c0e1e9;
 }
 
 html {
     color: "#022932";
     min-height: 100%;
+    max-width: 100vw;
 }
 body {
     height: 100%;
     min-height:  calc(100vh - var(--spacing) * 32);
-    padding-bottom: 1.5rem; 
+    padding-bottom: 1.5rem;
+    max-width: 100vw;
+    overflow-x: clip; 
 }

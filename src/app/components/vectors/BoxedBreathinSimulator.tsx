@@ -3,7 +3,7 @@
 
 import React, { RefObject, useEffect, useRef, useState } from "react";
 
-const breathingIntervalInSeconds = 1000;
+const breathingIntervalInSeconds = 9000;
 
 const clockify = (number: number) => (number < 10 ? "0" + number : number + "");
 const timify = (seconds: number) => {
@@ -191,20 +191,20 @@ const BoxedBreathinSimulator = () => {
 		return (
 			<>
 				<div
-					className="w-[380px] border-2 border-outline rounded-sm flex flex-col justify-center mb-8 py-8 relative "
+					className="w-[88vw] max-w-[380px] border-2 border-outline rounded-sm flex flex-col justify-center mb-8 py-8 relative "
 					ref={boxRef}
 				>
-					<div className="bg-[#005B70] text-white w-[110px] h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
+					<div className="bg-[#005B70] text-white w-[30vw] h-[30vw] max-w-[110px] max-h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
 						<h1 className="text-sm font-medium">
 							{breathingInstruction}
 						</h1>
 					</div>
 					<span
 						ref={dotRef}
-						className="absolute block bg-blue-400 w-5 h-5 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50"
+						className="absolute block bg-blue-400 dark:bg-[lab(82_-26.68_-20.14)] w-5 h-5 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50"
 					></span>
 					{breathingInstruction !== "" && (
-						<div className="text-sm font-medium border-2 border-blue-800 py-1/2 px-3 rounded-sm absolute -top-4 -right-7 rotate-17 bg-white">
+						<div className="text-sm font-medium border-2 border-outline dark:border-[#004e60] dark:bg-[#00383b] text-outline 0 py-1/2 px-3 rounded-sm absolute -top-4 -right-7 rotate-17 bg-white">
 							{timify(counter.count)}
 						</div>
 					)}
@@ -220,7 +220,7 @@ const BoxedBreathinSimulator = () => {
 				{breathingInstruction !== "" && (
 					<button
 						onClick={handleReset}
-						className="w-full border-2 border-[#004E60] rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer"
+						className="w-full border-2 border-[#004E60] dark:border-outline rounded-[2px] h-10 uppercase font-medium text-center dark:text-outline cursor-pointer tracking-wide"
 					>
 						Reset
 					</button>
@@ -229,14 +229,27 @@ const BoxedBreathinSimulator = () => {
 		);
 	}
 
-	return <div className="mt-12">
-
-		<h1 className="text-xl font-medium text-center mb-4 ">Still feeling stressed?</h1>
-		<div className="flex justify-center items-center gap-x-5">
-			<a onClick={() => setShowFinishMessage(false)} className="w-52 h-10 rounded-sm bg-[#005B70] text-white text-sm  hover:cursor-pointer flex justify-center items-center">Redo the exercise</a>
-			<a href="/alternatives" className="w-54 h-10 rounded-sm border-2 text-sm font-medium hover:cursor-pointer flex justify-center items-center">Check other techniques</a>
+	return (
+		<div className="mt-12">
+			<h1 className="text-xl font-medium text-center mb-4 ">
+				Still feeling stressed?
+			</h1>
+			<div className="flex justify-center items-center gap-x-5">
+				<a
+					onClick={() => setShowFinishMessage(false)}
+					className="w-52 h-10 rounded-sm bg-[#005B70] text-white text-sm  hover:cursor-pointer flex justify-center items-center"
+				>
+					Redo the exercise
+				</a>
+				<a
+					href="/alternatives"
+					className="w-54 h-10 rounded-sm border-2 text-sm font-medium hover:cursor-pointer flex justify-center items-center"
+				>
+					Check other techniques
+				</a>
+			</div>
 		</div>
-	</div>
+	);
 };
 
 export default BoxedBreathinSimulator;

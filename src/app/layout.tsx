@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Moon from "./components/vectors/Moon";
 import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const poppins = Poppins({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -19,13 +19,31 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
+			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+					const theme = localStorage.getItem('theme');
+					if(theme === 'dark') {
+						document.documentElement.classList.add('dark');
+					}
+            `,
+					}}
+				/>
+			</head>
 			<body
 				className={`${poppins.className} antialiased bg-surface text-onSurface relative`}
 			>
 				<header className="flex items-center relative h-18">
 					<DarkModeSwitchButton />
-					<nav className="flex gap-x-12 grow absolute left-1/2 -translate-x-1/2 text-[13.5px] [&_a]:font-medium dark:[&_a]:font-normal [&_a]:uppercase [&_a]:tracking-wider">
+
+					<nav className="flex flex-col top-15 min-[940px]:top-auto right-12 min-[530px]:right-65 invisible has-[:checked]:flex has-[:checked]:visible min-[940px]:visible max-[940px]:has-[:checked]:[&_a]:px-4 max-[940px]:[&>ul]:py-3 min-[940px]:bg-transparent min-[940px]:p-0 min-[940px]:flex-row gap-x-6 min-[1020px]:gap-x-12 grow absolute min-[940px]:left-1/2 min-[940px]:-translate-x-1/2 [&_a]:text-title text-[13.5px] [&_a]:font-medium dark:[&_a]:font-medium [&_a]:uppercase [&_a]:tracking-wider min-[940px]:right-auto max-[940px]:has-[:checked]:[&>ul]:bg-[#acdbe4] dark:max-[940px]:has-[:checked]:[&>ul]:bg-[#3e5357] max-[940px]:has-[:checked]:[&>ul]:hover:bg-[#cee8ea] dark:max-[940px]:has-[:checked]:[&>ul]:hover:bg-[#003c45] has-[:checked]:[&_a]:w-full has-[:checked]:[&_a]:block [&_li]:w-full z-50">
+						<input
+							id="toggle"
+							type="checkbox"
+							className="hidden"
+						/>
 						<ul className="flex gap-x-8">
 							<li>
 								<a href="/home">Home</a>
@@ -52,14 +70,22 @@ export default function RootLayout({
 								</a>
 							</li>
 						</ul>
+
+						<label
+							htmlFor="toggle"
+							className="visible absolute -right-0 -top-8 hover:cursor-pointer min-[940px]:hidden"
+						>
+							<RxHamburgerMenu />
+						</label>
 					</nav>
-					<h1 className="font-medium absolute right-10">
+					<h1 className="hidden min-[530px]:block font-medium absolute right-10 text-title">
 						Boxed Breathing Timer
 					</h1>
 				</header>
+
 				<main>{children}</main>
 
-				<footer className="bg-footer text-onFooter h-32 w-full -bottom-32 absolute flex justify-between px-10 items-center">
+				<footer className="bg-footer text-onFooter min-h-32 w-full -bottom-32 absolute flex justify-between px-10 py-5 items-center gap-x-12">
 					<div>
 						<a
 							href="/home"
@@ -69,8 +95,8 @@ export default function RootLayout({
 						</a>
 						<p className="text-xs">Copyright @ 2026</p>
 					</div>
-					<nav className="flex gap-x-8 text-[13px]">
-						<ul className="flex gap-x-8 ">
+					<nav className="flex flex-wrap justify-between gap-y-4 gap-x-8 text-[13px]">
+						<ul className="flex gap-x-8">
 							<li>
 								<a href="/home">Home</a>
 							</li>

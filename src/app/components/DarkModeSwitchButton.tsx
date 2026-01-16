@@ -4,24 +4,29 @@ import React, { useEffect, useState } from "react";
 import Moon from "./vectors/Moon";
 
 const DarkModeSwitchButton = () => {
-	const [body, setBody] = useState<HTMLElement | undefined>();
+	const [htmlElement, setHtmlElement] = useState<HTMLElement | undefined>();
 
 	useEffect(() => {
-		setBody(document.body);
+		setHtmlElement(document.documentElement);
 	}, []);
 
 	const handleClick = () => {
-		if (!body) {
+		if (!htmlElement) {
 			return;
 		}
-		if (!body.classList.contains("dark")) {
-			body.classList.add("dark");
+		if (!htmlElement.classList.contains("dark")) {
+			htmlElement.classList.add("dark");
+			localStorage.setItem("theme", "dark");
 		} else {
-			body.classList.remove("dark");
+			htmlElement.classList.remove("dark");
+			localStorage.setItem("theme", "white");
 		}
 	};
 	return (
-		<button onClick={handleClick} className="absolute left-10 hover:cursor-pointer">
+		<button
+			onClick={handleClick}
+			className="absolute left-10 hover:cursor-pointer"
+		>
 			<Moon size={37} />
 		</button>
 	);
