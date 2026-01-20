@@ -1,7 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
+import { Sound } from "@/types/Sound";
 import React, { RefObject, useEffect, useRef, useState } from "react";
+import { FaCat } from "react-icons/fa";
+import { FaBrain } from "react-icons/fa6";
+import { GiMusicalScore } from "react-icons/gi";
+import { MdArrowDropDown } from "react-icons/md";
+import { PiWavesBold } from "react-icons/pi";
+import SoundSelection from "../SoundSelection";
 
 const breathingIntervalInSeconds = 9000;
 
@@ -26,6 +33,7 @@ const BoxedBreathinSimulator = () => {
 		breathingInstruction?: NodeJS.Timeout;
 	}>({});
 	const [showFinishMessage, setShowFinishMessage] = useState(false);
+	const [selectedSound, setSelectedSound] = useState<Sound | undefined>();
 
 	useEffect(() => {
 		if (localStorage.getItem("resetting") === "true") {
@@ -78,11 +86,11 @@ const BoxedBreathinSimulator = () => {
 						? breathingInstructions[0]
 						: breathingInstructions[
 								(breathingInstructions.indexOf(
-									breathingInstruction
+									breathingInstruction,
 								) +
 									1) %
 									4
-						  ]
+							],
 				);
 			}, breathingIntervalInSeconds),
 		};
@@ -100,6 +108,7 @@ const BoxedBreathinSimulator = () => {
 
 		setBreathingInstruction(breathingInstructions[0]);
 		const now = new Date().getTime();
+		selectedSound?.audio?.play();
 		moveDot(now);
 	};
 
@@ -116,6 +125,8 @@ const BoxedBreathinSimulator = () => {
 			dotRef.current.style.left = "0";
 			dotRef.current.style.top = "0";
 		}, 10);
+		selectedSound!.audio!.pause();
+		selectedSound!.audio!.currentTime = 0;
 	};
 
 	const moveDot = (startTime: number) => {
@@ -133,7 +144,7 @@ const BoxedBreathinSimulator = () => {
 							Math.floor(breathingIntervalInSeconds)) *
 						(delta -
 							Math.floor(
-								delta / breathingIntervalInSeconds
+								delta / breathingIntervalInSeconds,
 							) *
 								breathingIntervalInSeconds);
 
@@ -146,7 +157,7 @@ const BoxedBreathinSimulator = () => {
 							Math.floor(breathingIntervalInSeconds)) *
 						(delta -
 							Math.floor(
-								delta / breathingIntervalInSeconds
+								delta / breathingIntervalInSeconds,
 							) *
 								breathingIntervalInSeconds);
 
@@ -159,7 +170,7 @@ const BoxedBreathinSimulator = () => {
 							Math.floor(breathingIntervalInSeconds)) *
 							(delta -
 								Math.floor(
-									delta / breathingIntervalInSeconds
+									delta / breathingIntervalInSeconds,
 								) *
 									breathingIntervalInSeconds);
 
@@ -173,7 +184,7 @@ const BoxedBreathinSimulator = () => {
 							Math.floor(breathingIntervalInSeconds)) *
 							(delta -
 								Math.floor(
-									delta / breathingIntervalInSeconds
+									delta / breathingIntervalInSeconds,
 								) *
 									breathingIntervalInSeconds);
 
@@ -183,6 +194,9 @@ const BoxedBreathinSimulator = () => {
 
 			if (delta <= 4 * 4 * breathingIntervalInSeconds) {
 				moveDot(startTime);
+			} else if (selectedSound) {
+				selectedSound!.audio!.pause();
+				selectedSound!.audio!.currentTime = 0;
 			}
 		}, 1);
 	};
@@ -190,41 +204,56 @@ const BoxedBreathinSimulator = () => {
 	if (!showFinishMessage) {
 		return (
 			<>
-				<div
-					className="w-[88vw] max-w-[380px] border-2 border-outline rounded-sm flex flex-col justify-center mb-8 py-8 relative "
-					ref={boxRef}
-				>
-					<div className="bg-[#005B70] text-white w-[30vw] h-[30vw] max-w-[110px] max-h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
-						<h1 className="text-sm font-medium">
-							{breathingInstruction}
-						</h1>
-					</div>
-					<span
-						ref={dotRef}
-						className="absolute block bg-blue-400 dark:bg-[lab(82_-26.68_-20.14)] w-5 h-5 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50"
-					></span>
-					{breathingInstruction !== "" && (
-						<div className="text-sm font-medium border-2 border-outline dark:border-[#004e60] dark:bg-[#00383b] text-outline 0 py-1/2 px-3 rounded-sm absolute -top-4 -right-7 rotate-17 bg-white">
-							{timify(counter.count)}
+				<div className="w-[88vw] max-w-[380px] mb-8">
+					<div
+						ref={boxRef}
+						className="border-2 border-outline rounded-sm flex flex-col justify-center mb-6 py-8 relative"
+					>
+						<div className="bg-[#005B70] text-white w-[30vw] h-[30vw] max-w-[110px] max-h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
+							<h1 className="text-sm font-medium">
+								{breathingInstruction}
+							</h1>
 						</div>
+						<span
+							ref={dotRef}
+							className="absolute block bg-blue-400 dark:bg-[lab(82_-26.68_-20.14)] w-5 h-5 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50"
+						></span>
+						{breathingInstruction !== "" && (
+							<div className="text-sm font-medium border-2 border-outline dark:border-[#004e60] dark:bg-[#00383b] text-outline 0 py-1/2 px-3 rounded-sm absolute -top-4 -right-7 rotate-17 bg-white">
+								{timify(counter.count)}
+							</div>
+						)}
+					</div>
+					{breathingInstruction === "" && (
+						<button
+							onClick={handleStartClick}
+							className="w-full bg-primary text-white rounded-[2px] h-10 uppercase font-medium 	 cursor-pointer tracking-wide"
+						>
+							Start
+						</button>
 					)}
+					{breathingInstruction !== "" && (
+						<button
+							onClick={handleReset}
+							className="w-full border-2 border-[#004E60] dark:border-outline rounded-[2px] h-10 uppercase font-medium text-center dark:text-outline cursor-pointer tracking-wide"
+						>
+							Reset
+						</button>
+					)}
+					<SoundSelection
+						onSoundSelection={(sound) => {
+							if (
+								selectedSound &&
+								selectedSound.audio?.currentTime !== 0
+							) {
+								selectedSound.audio?.pause();
+								selectedSound.audio!.currentTime = 0;
+								sound.audio?.play();
+							}
+							setSelectedSound(sound);
+						}}
+					/>
 				</div>
-				{breathingInstruction === "" && (
-					<button
-						onClick={handleStartClick}
-						className="w-full bg-primary text-white rounded-[2px] h-10 uppercase font-medium text-center cursor-pointer tracking-wide"
-					>
-						Start
-					</button>
-				)}
-				{breathingInstruction !== "" && (
-					<button
-						onClick={handleReset}
-						className="w-full border-2 border-[#004E60] dark:border-outline rounded-[2px] h-10 uppercase font-medium text-center dark:text-outline cursor-pointer tracking-wide"
-					>
-						Reset
-					</button>
-				)}
 			</>
 		);
 	}
