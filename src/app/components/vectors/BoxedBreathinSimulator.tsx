@@ -3,14 +3,10 @@
 
 import { Sound } from "@/types/Sound";
 import React, { RefObject, useEffect, useRef, useState } from "react";
-import { FaCat } from "react-icons/fa";
-import { FaBrain } from "react-icons/fa6";
-import { GiMusicalScore } from "react-icons/gi";
-import { MdArrowDropDown } from "react-icons/md";
-import { PiWavesBold } from "react-icons/pi";
+
 import SoundSelection from "../SoundSelection";
 
-const breathingIntervalInSeconds = 9000;
+const breathingIntervalInSeconds = 1000;
 
 const clockify = (number: number) => (number < 10 ? "0" + number : number + "");
 const timify = (seconds: number) => {
@@ -227,7 +223,7 @@ const BoxedBreathinSimulator = () => {
 					{breathingInstruction === "" && (
 						<button
 							onClick={handleStartClick}
-							className="w-full bg-primary text-white rounded-[2px] h-10 uppercase font-medium 	 cursor-pointer tracking-wide"
+							className="w-full bg-primary hover:bg-primary-hover text-white rounded-[2px] h-10 uppercase font-medium cursor-pointer tracking-wide"
 						>
 							Start
 						</button>
@@ -235,7 +231,7 @@ const BoxedBreathinSimulator = () => {
 					{breathingInstruction !== "" && (
 						<button
 							onClick={handleReset}
-							className="w-full border-2 border-[#004E60] dark:border-outline rounded-[2px] h-10 uppercase font-medium text-center dark:text-outline cursor-pointer tracking-wide"
+							className="w-full border-2 dark:border-outline hover:bg-primary hover:text-onPrimary hover:border-transparent dark:hover:text-white rounded-xs py-1.5 uppercase font-medium text-center tracking-wide cursor-pointer "
 						>
 							Reset
 						</button>
@@ -260,19 +256,19 @@ const BoxedBreathinSimulator = () => {
 
 	return (
 		<div className="mt-12">
-			<h1 className="text-xl font-medium text-center mb-4 ">
+			<h1 className="text-xl font-medium text-center mb-5">
 				Still feeling stressed?
 			</h1>
-			<div className="flex justify-center items-center gap-x-5">
+			<div className="flex flex-col justify-center items-center gap-y-4">
 				<a
 					onClick={() => setShowFinishMessage(false)}
-					className="w-52 h-10 rounded-sm bg-[#005B70] text-white text-sm  hover:cursor-pointer flex justify-center items-center"
+					className="w-52 h-10 rounded-sm bg-primary hover:bg-primary-hover text-onPrimary text-sm  hover:cursor-pointer flex justify-center items-center"
 				>
 					Redo the exercise
 				</a>
 				<a
 					href="/alternatives"
-					className="w-54 h-10 rounded-sm border-2 text-sm font-medium hover:cursor-pointer flex justify-center items-center"
+					className="w-52 h-10 hover:bg-secondary hover:text-onPrimary hover:border-none rounded-sm border-2 text-[13.5px] font-medium hover:cursor-pointer flex justify-center items-center"
 				>
 					Check other techniques
 				</a>

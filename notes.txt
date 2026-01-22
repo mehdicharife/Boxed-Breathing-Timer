@@ -4,3 +4,9 @@ TODOs:
 3. Simulator extension (music selection, offering the choice of repeating the exercise or checking alternatives after ending it)
 4. change the default next logo and title
 
+
+================================================
+1. / forwards to /home
+2. nav underlines
+3. alternatives cards hover effect in light mode
+4. hover effects on start and reset buttons

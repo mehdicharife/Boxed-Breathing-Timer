@@ -1,5 +1,6 @@
 import { Sound } from "@/types/Sound";
 import React, { useEffect, useState } from "react";
+import { BsCloudRainFill } from "react-icons/bs";
 import { FaCat, FaBrain } from "react-icons/fa";
 import { GiBigWave, GiMusicalScore } from "react-icons/gi";
 import { IoMdPause } from "react-icons/io";
@@ -37,6 +38,14 @@ const initialSounds: Sound[] = [
 		icon: MdForest,
 		audioFileName: "forest.mp3",
 	},
+
+	{
+		name: "Rain sounds",
+		description:
+			"Rain sounds are created by water droplets striking surfaces, producing broadband frequencies (250 Hz-2 kHz) with steady patterns that have been associated with improved sleep and relaxation through ambient noise masking.",
+		icon: BsCloudRainFill,
+		audioFileName: "rain.mp3",
+	},
 ];
 
 const SoundSelection = ({
@@ -66,7 +75,7 @@ const SoundSelection = ({
 	return (
 		<div className="relative">
 			<button
-				className="w-full border-2 py-1.5 px-2 flex justify-between items-center mt-4 mb-3 cursor-pointer"
+				className="w-full border-2  py-1.5 px-2 flex justify-between items-center hover:border-outline-hover mt-4 mb-3 cursor-pointer"
 				onClick={() =>
 					setSoundSelectionVisible(!soundSelectionVisible)
 				}
@@ -86,7 +95,7 @@ const SoundSelection = ({
 						) : (
 							<button
 								title="pause"
-								className="cursor-pointer"
+								className="cursor-pointer hover:text-outline"
 								onClick={(event) => {
 									if (!selectedSound.audio!.paused) {
 										selectedSound.audio!.pause();
@@ -112,11 +121,11 @@ const SoundSelection = ({
 				<MdArrowDropDown size="22" />
 			</button>
 			<div
-				className={`flex flex-col bg-[#EBF7F8] rounded-sm shadow-[4px_4px_6px_2px_rgba(0,_0,_0,_0.1)] absolute z-50 max-h-[220px] overflow-y-scroll ${soundSelectionVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-400`}
+				className={`flex flex-col bg-[#EBF7F8] dark:bg-[#1f3638] rounded-sm shadow-[4px_4px_6px_2px_rgba(0,_0,_0,_0.1)] absolute z-50 max-h-[220px] overflow-y-scroll ${soundSelectionVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-400`}
 			>
 				{sounds.map((sound) => (
 					<button
-						className="flex py-2 px-2 gap-x-4 bg-[#EBF7F8] hover:bg-[#c0ecf1] hover:cursor-pointer"
+						className="flex py-2 px-2 gap-x-4 bg-[#EBF7F8] dark:bg-[#1f3638] hover:bg-[#c0ecf1] dark:hover:bg-[#1a2d2f] hover:cursor-pointer"
 						onClick={() => handleSoundSelection(sound)}
 						key={sound.name}
 					>

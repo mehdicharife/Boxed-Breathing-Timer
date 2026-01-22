@@ -171,13 +171,13 @@ const page = () => {
 					time.
 				</p>
 
-				<div className="flex justify-end min-[70ch]:w-[50ch] w-[90vw] mb-4">
+				<div className="flex justify-end min-[70ch]:w-[50ch] w-[90vw] mb-4 group">
 					<a href="/home" className="flex items-center gap-x-5">
-						<div className="w-12 h-0.5 bg-arrow relative rotate-180">
+						<div className="w-12 h-0.5 bg-arrow relative rotate-180 group-hover:w-20  transition-[width] delay-150 duration-300 ease-in-out">
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 -rotate-30  origin-top-right "></span>
 						</div>
-						<div className="text-sm text-title italic font-medium">
+						<div className="text-sm text-title italic font-medium group-hover:not-italic">
 							Go to the exercise page
 						</div>
 					</a>

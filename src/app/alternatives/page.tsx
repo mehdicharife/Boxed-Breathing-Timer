@@ -7,7 +7,7 @@ import BilateralStimulationIcon from "../components/vectors/vectors/BilateralSti
 
 const page = () => {
 	return (
-		<div className="pt-8 [&_svg]:dark:filter-[brightness(0)_saturate(100%)_invert(67%)_sepia(23%)_saturate(475%)_hue-rotate(135deg)_brightness(100%)_contrast(94%)]	">
+		<div className="pt-8 [&_svg]:filter-[brightness(0)_saturate(100%)_invert(19%)_sepia(9%)_saturate(1607%)_hue-rotate(140deg)_brightness(86%)_contrast(87%)] [&_svg]:dark:filter-[brightness(0)_saturate(100%)_invert(67%)_sepia(23%)_saturate(475%)_hue-rotate(135deg)_brightness(100%)_contrast(94%)]">
 			<div className="w-[88vw] max-w-[50ch] m-auto mb-10 text-center ">
 				<h1 className="text-2xl text-title font-bold mb-3">
 					Alternative real time techniques for combating stress
@@ -20,15 +20,15 @@ const page = () => {
 				</p>
 			</div>
 
-			<div className="w-full flex flex-wrap gap-x-10 gap-y-10  justify-center m-auto mb-24 [&>p]:text-[#003743] [&>a]:shrink-0 [&_a]:hover:dark:bg-[#234c5e] [&_a]:hover:dark:border-none">
+			<div className="w-full flex flex-wrap gap-x-10 gap-y-10  justify-center m-auto mb-24 [&>p]:text-[#003743] [&>a]:shrink-0 [&_a]:hover:bg-[#d6e1e4] [&_a]:hover:dark:bg-[#234c5e] [&_a]:hover:border-none [&_svg]:filter-[brightness(0)_saturate(100%)_invert(19%)_sepia(9%)_saturate(1607%)_hue-rotate(140deg)_brightness(86%)_contrast(87%)] [&_svg]:dark:filter-[brightness(0)_saturate(100%)_invert(67%)_sepia(23%)_saturate(475%)_hue-rotate(135deg)_brightness(100%)_contrast(94%)]">
 				<a
-					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer group"
+					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center cursor-pointer hover:border-transparent group"
 					href="#physiological-sigh"
 				>
 					<p className="text-sm text-title font-bold dark:font-medium text-center mb-2">
 						The Physiological Sigh
 					</p>
-					<SighIcon width="120" height="120" />
+					<SighIcon width="120" height="120"/>
 				</a>
 				<a
 					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer hover:border-none group"
@@ -69,7 +69,7 @@ const page = () => {
 			</div>
 
 			<section
-				className="flex flex-col md:flex-row items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
+				className="flex flex-col md:flex-row items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto] "
 				id="physiological-sigh"
 			>
 				<div className="shrink-0 w-[280px] md:w-[33%]">
@@ -167,7 +167,7 @@ const page = () => {
 				</div>
 			</section>
 			<section
-				className="flex flex-col md:flex-row items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
+				className="flex flex-col md:flex-row-reverse items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
 				id="humming"
 			>
 				<div className="shrink-0 w-[280px] md:w-[33%]">
@@ -198,7 +198,7 @@ const page = () => {
 			</section>
 
 			<section
-				className="flex flex-col md:flex-row-reverse items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
+				className="flex flex-col md:flex-row items-center gap-y-8 justify-between mb-16 w-[90%] max-w-[1000px] m-[0_auto]"
 				id="bilateral-stimulation"
 			>
 				<div className="shrink-0 w-[280px] md:w-[33%]">
