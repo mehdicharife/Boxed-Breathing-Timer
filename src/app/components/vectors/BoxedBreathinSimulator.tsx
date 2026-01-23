@@ -7,10 +7,11 @@ import React, { RefObject, useEffect, useRef, useState } from "react";
 import SoundSelection from "../SoundSelection";
 import timify from "@/utils/timify";
 
-const breathingIntervalInSeconds = 1000;
-
 const breathingInstructions = ["Breathe In", "Hold", "Breathe Out", "Hold "];
 const BoxedBreathinSimulator = () => {
+	const breathingIntervalInSeconds = Number(
+		process.env.NEXT_PUBLIC_BREATHING_INTERVAL_IN_SECONDS,
+	);
 	const dotRef = useRef<HTMLSpanElement>(null) as RefObject<HTMLSpanElement>;
 	const boxRef = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>;
 	const [counter, setCounter] = useState({
