@@ -5,16 +5,9 @@ import { Sound } from "@/types/Sound";
 import React, { RefObject, useEffect, useRef, useState } from "react";
 
 import SoundSelection from "../SoundSelection";
+import timify from "@/utils/timify";
 
 const breathingIntervalInSeconds = 1000;
-
-const clockify = (number: number) => (number < 10 ? "0" + number : number + "");
-const timify = (seconds: number) => {
-	const minutes = Math.floor(seconds / 60);
-	const secs = seconds % 60;
-
-	return `${clockify(minutes)}:${clockify(secs)}`;
-};
 
 const breathingInstructions = ["Breathe In", "Hold", "Breathe Out", "Hold "];
 const BoxedBreathinSimulator = () => {
