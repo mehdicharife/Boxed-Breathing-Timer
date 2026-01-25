@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Moon from "./vectors/Moon";
 
+
 const DarkModeSwitchButton = () => {
 	const [htmlElement, setHtmlElement] = useState<HTMLElement | undefined>();
 
@@ -25,6 +26,7 @@ const DarkModeSwitchButton = () => {
 	return (
 		<button
 			onClick={handleClick}
+			title="switch mode"
 			className="absolute left-10 hover:cursor-pointer"
 		>
 			<Moon size={37} />

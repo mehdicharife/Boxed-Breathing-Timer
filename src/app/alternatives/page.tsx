@@ -1,9 +1,9 @@
 import React from "react";
-import SighIcon from "../components/vectors/vectors/Sigh";
-import BinauralBeatsIcon from "../components/vectors/vectors/BinauralBeatsIcon";
-import ColdExposureIcon from "../components/vectors/vectors/ColdExposureIcon";
-import HummingIcon from "../components/vectors/vectors/HummingIcon";
-import BilateralStimulationIcon from "../components/vectors/vectors/BilateralStimulationIcon";
+import SighIcon from "../components/vectors/Sigh";
+import BinauralBeatsIcon from "../components/vectors/BinauralBeatsIcon";
+import ColdExposureIcon from "../components/vectors/ColdExposureIcon";
+import HummingIcon from "../components/vectors/HummingIcon";
+import BilateralStimulationIcon from "../components/vectors/BilateralStimulationIcon";
 
 const page = () => {
 	return (
@@ -28,7 +28,7 @@ const page = () => {
 					<p className="text-sm text-title font-bold dark:font-medium text-center mb-2">
 						The Physiological Sigh
 					</p>
-					<SighIcon width="120" height="120"/>
+					<SighIcon width="120" height="120" />
 				</a>
 				<a
 					className="w-[88vw] min-[450px]:w-[190px] h-[170px] border-2 border-outline rounded-sm p-2 pt-3 flex flex-col items-center hover:cursor-pointer hover:border-none group"

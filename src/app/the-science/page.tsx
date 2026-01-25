@@ -1,8 +1,8 @@
 import React from "react";
-import Lung from "../components/vectors/vectors/Lung";
-import VagusNerve from "../components/vectors/vectors/VagusNerve";
-import HeartRate from "../components/vectors/vectors/HeartRate";
-import BP from "../components/vectors/vectors/BP";
+import Lung from "../components/vectors/Lung";
+import VagusNerve from "../components/vectors/VagusNerve";
+import HeartRate from "../components/vectors/HeartRate";
+import BP from "../components/vectors/BP";
 
 const page = () => {
 	return (
@@ -13,9 +13,7 @@ const page = () => {
 				</h1>
 				<div className="flex gap-x-[10%] mb-10 w-[85vw] max-w-[620px]">
 					<div className="relative w-[25%]">
-						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Inhale'] min-[550px]:after:content-['Breathe_In']">
-							
-						</h2>
+						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Inhale'] min-[550px]:after:content-['Breathe_In']"></h2>
 						<div className="w-full h-0 pb-[100%] border-2 border-outline"></div>
 						<div className="block absolute w-full h-0.5 bg-arrow left-0 top-6">
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>
@@ -23,9 +21,7 @@ const page = () => {
 						</div>
 					</div>
 					<div className="relative w-[25%]">
-						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Hold']">
-							
-						</h2>
+						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Hold']"></h2>
 						<div className="w-full h-0 pb-[100%] border-2 border-outline"></div>
 						<div className="block absolute w-full h-0.5 bg-arrow left-2 bottom-0 rotate-90 origin-bottom-right">
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>
@@ -34,8 +30,7 @@ const page = () => {
 					</div>
 
 					<div className="relative w-[25%]">
-						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Exhale'] min-[550px]:after:content-['Breathe_out']">
-						</h2>
+						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Exhale'] min-[550px]:after:content-['Breathe_out']"></h2>
 						<div className="w-full h-0 pb-[100%] border-2 border-outline"></div>
 						<div className="block absolute w-full h-0.5 bg-arrow left-0 -bottom-2.5 -rotate-180">
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>
@@ -44,8 +39,7 @@ const page = () => {
 					</div>
 
 					<div className="relative w-[25%]">
-						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Hold']">
-						</h2>
+						<h2 className="text-xs min-[510px]:text-sm text-title font-medium text-center mb-3.5 after:content-['Hold']"></h2>
 						<div className="w-full h-0 pb-[100%] border-2 border-outline"></div>
 						<div className="block absolute w-full h-0.5 bg-arrow -left-2.5 -bottom-0.5 -rotate-90 origin-top-left">
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>

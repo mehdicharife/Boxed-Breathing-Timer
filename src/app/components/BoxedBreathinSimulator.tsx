@@ -4,7 +4,7 @@
 import { Sound } from "@/types/Sound";
 import React, { RefObject, useEffect, useRef, useState } from "react";
 
-import SoundSelection from "../SoundSelection";
+import SoundSelection from "./SoundSelection";
 import timify from "@/utils/timify";
 
 const breathingInstructions = ["Breathe In", "Hold", "Breathe Out", "Hold "];

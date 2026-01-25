@@ -1,11 +1,11 @@
 import React from "react";
-import BoxedBreathinSimulator from "../components/vectors/BoxedBreathinSimulator";
+import BoxedBreathinSimulator from "../components/BoxedBreathinSimulator";
 
 const page = () => {
 	return (
 		<div className="flex justify-center items-center mt-12">
 			<div>
-		<BoxedBreathinSimulator/>
+				<BoxedBreathinSimulator />
 			</div>
 		</div>
 	);
