@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Boxed Breathing Timer
 
-## Getting Started
+A small Next.js (TypeScript, React) app that provides a boxed-breathing timer and related breathing/relaxation tools. Includes a simulator, sound selection, dark mode support, and an "alternatives" section with other breathing/relaxation techniques.
 
-First, run the development server:
+## Features
+- Boxed breathing simulator UI
+- Sound selection (audio assets in public/audio)
+- Dark mode toggle
+- Alternatives section with cards and illustrations
+- Small utilities for time formatting and clock handling
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Quick start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Prerequisites:
+- Node.js (16+ recommended)
+- npm or yarn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install and run locally:
+1. Install dependencies
+    - npm: `npm install`
+    - yarn: `yarn`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Run development server
+    - npm: `npm run dev`
+    - yarn: `yarn dev`
 
-## Learn More
+3. Open http://localhost:3000
 
-To learn more about Next.js, take a look at the following resources:
+Build for production:
+- npm: `npm run build` then `npm start`
+- yarn: `yarn build` then `yarn start`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+(Adjust scripts to match package.json if different.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project structure
+- app/ — Next.js app router (pages, layout, globals.css)
+  - components/ — UI components (BoxedBreathinSimulator, SoundSelection, DarkModeSwitchButton, icons)
+  - home/, the-science/, alternatives/ — route pages
+- public/audio/ — audio assets used by the app
+- types/ — TypeScript types (Sound)
+- utils/ — helper utilities (clockify, timify)
+- middleware.ts — request middleware
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development notes
+- UI is componentized; start in app/components/BoxedBreathinSimulator.tsx for core timer logic.
+- Audio files are served from public/audio; reference with `/audio/<file>` in the app.
+- Styling entry: app/globals.css.
