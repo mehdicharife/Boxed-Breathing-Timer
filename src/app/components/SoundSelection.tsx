@@ -13,7 +13,7 @@ const initialSounds: Sound[] = [
 		description:
 			"Binaural beats are an auditory illusion created when two slightly different frequencies are played separately into each ear, causing the brain to perceive a third tone that may promote relaxation by encouraging slower brainwave patterns associated with meditative and calm mental states.",
 		icon: FaBrain,
-		audioFileName: "binaural.wav",
+		audioFileName: "binaural.mp3",
 	},
 	{
 		name: "Ocean waves",
