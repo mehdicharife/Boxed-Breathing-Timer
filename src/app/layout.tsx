@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -155,6 +156,7 @@ export default function RootLayout({
            				 `,
 					}}
 				/>
+				<Analytics />
 			</body>
 		</html>
 	);
