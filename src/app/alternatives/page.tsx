@@ -6,6 +6,7 @@ import HummingIcon from "../components/vectors/HummingIcon";
 import BilateralStimulationIcon from "../components/vectors/BilateralStimulationIcon";
 import AlternativeCard, { Alternative } from "../components/AlternativeCard";
 import AlternativeSection from "../components/AlternativeSection";
+import { GoAlert } from "react-icons/go";
 
 const alternatives: Alternative[] = [
 	{
@@ -24,7 +25,7 @@ const alternatives: Alternative[] = [
 		icon: ColdExposureIcon,
 		description: {
 			p1: "Cold exposure is a powerful tool for interrupting stress responses in real time. When combined with breath holding, cold water on your face activates the diving reflex—an ancient mammalian response that immediately slows your heart rate and shifts your nervous system toward calm.",
-			p2: "Fill a bowl with ice-cold water, take a breath, and submerge your face for 15-30 seconds while holding your breath. The cold water triggers an automatic drop in heart rate and blood pressure, breaking the cycle of panic or acute stress. This technique provides one of the fastest physiological ways to regain control when overwhelmed.",
+			p2: "Before trying this technique, note that it's not suitable for those with heart, respiratory, or circulatory conditions, and should never be practiced in deep water. To use cold exposure: fill a bowl with ice-cold water, take a breath, and submerge your face for 15-30 seconds while holding your breath. The cold water triggers an automatic drop in heart rate and blood pressure, breaking the cycle of panic or acute stress. This technique provides one of the fastest physiological ways to regain control when overwhelmed.",
 		},
 		cardWidth: "90",
 		cardHeight: "110",
@@ -67,7 +68,26 @@ const alternatives: Alternative[] = [
 
 const page = () => {
 	return (
-		<div className="pt-8 [&_svg]:filter-[brightness(0)_saturate(100%)_invert(19%)_sepia(9%)_saturate(1607%)_hue-rotate(140deg)_brightness(86%)_contrast(87%)] [&_svg]:dark:filter-[brightness(0)_saturate(100%)_invert(67%)_sepia(23%)_saturate(475%)_hue-rotate(135deg)_brightness(100%)_contrast(94%)]">
+		<div className=" [&_svg]:filter-[brightness(0)_saturate(100%)_invert(19%)_sepia(9%)_saturate(1607%)_hue-rotate(140deg)_brightness(86%)_contrast(87%)] [&_svg]:dark:filter-[brightness(0)_saturate(100%)_invert(67%)_sepia(23%)_saturate(475%)_hue-rotate(135deg)_brightness(100%)_contrast(94%)]">
+			<div className="w-full py-2 px-2 flex justify-between bg-[#b7eaf5] dark:bg-[rgb(229_251_255)] dark:text-[#1c4650] mb-4">
+				<div className="flex justify-center gap-x-2 cursor-pointer">
+					<div className="flex  gap-x-2">
+						<p className="text-xs font-medium">
+							<GoAlert
+								size="13"
+								className="!filter-none dark:text-[#1c4650] stroke-1 inline mr-1.5"
+							/>
+							<span className="font-bold">Disclaimer</span>
+							: This information is not medical advice.
+							Consult a healthcare provider before trying
+							these techniques, especially if you have
+							existing health conditions. Stop immediately
+							if you feel unwell.
+						</p>
+					</div>
+				</div>
+			</div>
+
 			<div className="w-[88vw] max-w-[50ch] m-auto mb-10 text-center ">
 				<h1 className="text-2xl text-title font-bold mb-3">
 					Alternative real time techniques for combating stress
