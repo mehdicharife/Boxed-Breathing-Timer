@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -9,6 +8,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL(process.env.URL_SELF as string),
+	alternates: {
+		canonical: "./",
+	},
 	title: "Boxed Breathing Timer",
 	description: "An aid to the boxed breathing exercise",
 };
