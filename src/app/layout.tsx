@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
+import JsonLd from "./components/JsonLd";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Analytics } from "@vercel/analytics/next";
+import { websiteStructuredData } from "./structured-data";
 
 import "./globals.css"
 
@@ -27,6 +29,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
+				<JsonLd data={websiteStructuredData} />
 				<script
 					dangerouslySetInnerHTML={{
 						__html: `

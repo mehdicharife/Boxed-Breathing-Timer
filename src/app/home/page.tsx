@@ -1,6 +1,8 @@
 import React from "react";
 import BoxedBreathinSimulator from "../components/BoxedBreathinSimulator";
+import JsonLd from "../components/JsonLd";
 import { createPageMetadata } from "../social-metadata";
+import { webApplicationStructuredData } from "../structured-data";
 
 export const metadata = createPageMetadata({
 	title: "Box Breathing Timer (4-4-4-4) | Boxed Breathing Timer",
@@ -12,6 +14,7 @@ export const metadata = createPageMetadata({
 const page = () => {
 	return (
 		<div className="flex justify-center items-center mt-12">
+			<JsonLd data={webApplicationStructuredData} />
 			<div>
 				<BoxedBreathinSimulator />
 			</div>
