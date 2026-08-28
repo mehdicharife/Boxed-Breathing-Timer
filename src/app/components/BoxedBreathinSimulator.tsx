@@ -2,6 +2,7 @@
 "use client";
 
 import { Sound } from "@/types/Sound";
+import Link from "next/link";
 import React, { RefObject, useEffect, useRef, useState } from "react";
 
 import SoundSelection from "./SoundSelection";
@@ -260,12 +261,12 @@ const BoxedBreathinSimulator = () => {
 				>
 					Redo the exercise
 				</a>
-				<a
+				<Link
 					href="/alternatives"
 					className="w-52 h-10 hover:bg-secondary hover:text-onPrimary hover:border-none rounded-sm border-2 text-[13.5px] font-medium hover:cursor-pointer flex justify-center items-center"
 				>
 					Check other techniques
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

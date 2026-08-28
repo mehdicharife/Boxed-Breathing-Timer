@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Poppins } from "next/font/google";
 import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
 import JsonLd from "./components/JsonLd";
@@ -55,35 +56,35 @@ export default function RootLayout({
 						/>
 						<ul className="flex gap-x-8">
 							<li>
-								<a
+								<Link
 									href="/home"
 									className="relative group"
 								>
 									Home
 									<span className="absolute block left-0 -bottom-0.5 w-0 h-0.5 bg-outline group-hover:w-full transition-[width] delay-50 duration-150 ease-in-out"></span>
-								</a>
+								</Link>
 							</li>
 						</ul>
 						<ul className="flex gap-x-5">
 							<li>
-								<a
+								<Link
 									href="/the-science"
 									className="group relative"
 								>
 									The science
 									<span className="absolute block left-0 -bottom-0.5 w-0 h-0.5 bg-outline group-hover:w-full transition-[width] delay-50 duration-150 ease-in-out"></span>
-								</a>
+								</Link>
 							</li>
 						</ul>
 						<ul className="flex gap-x-5">
 							<li>
-								<a
+								<Link
 									href="/alternatives"
 									className="group relative"
 								>
 									Alternatives
 									<span className="absolute block left-0 -bottom-0.5 w-0 h-0.5 bg-outline group-hover:w-full transition-[width] delay-50 duration-150 ease-in-out"></span>
-								</a>
+								</Link>
 							</li>
 						</ul>
 						<ul className="flex gap-x-5">
@@ -116,28 +117,28 @@ export default function RootLayout({
 
 				<footer className="bg-footer text-onFooter min-h-32 w-full -bottom-32 absolute flex justify-between px-10 py-5 items-center gap-x-12">
 					<div>
-						<a
+						<Link
 							href="/home"
 							className="font-medium block mb-1"
 						>
 							Boxed Breathing Timer
-						</a>
+						</Link>
 						<p className="text-xs">Copyright @ 2026</p>
 					</div>
 					<nav className="flex flex-wrap justify-between gap-y-4 gap-x-8 text-[13px]">
 						<ul className="flex gap-x-8">
 							<li>
-								<a href="/home">Home</a>
+								<Link href="/home">Home</Link>
 							</li>
 						</ul>
 						<ul className="flex gap-x-5">
 							<li>
-								<a href="/the-science">The science</a>
+								<Link href="/the-science">The science</Link>
 							</li>
 						</ul>
 						<ul className="flex gap-x-5">
 							<li>
-								<a href="/alternatives">Alternatives</a>
+								<Link href="/alternatives">Alternatives</Link>
 							</li>
 						</ul>
 						<ul className="flex gap-x-5">

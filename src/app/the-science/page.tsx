@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Lung from "../components/vectors/Lung";
 import VagusNerve from "../components/vectors/VagusNerve";
 import HeartRate from "../components/vectors/HeartRate";
@@ -166,7 +167,7 @@ const page = () => {
 				</p>
 
 				<div className="flex justify-end min-[70ch]:w-[50ch] w-[90vw] mb-4 group">
-					<a href="/home" className="flex items-center gap-x-5">
+					<Link href="/home" className="flex items-center gap-x-5">
 						<div className="w-12 h-0.5 bg-arrow relative rotate-180 group-hover:w-20  transition-[width] delay-150 duration-300 ease-in-out">
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 -rotate-30  origin-top-right "></span>
@@ -174,7 +175,7 @@ const page = () => {
 						<div className="text-sm text-title italic font-medium group-hover:not-italic">
 							Go to the exercise page
 						</div>
-					</a>
+					</Link>
 				</div>
 			</div>
 		</div>
