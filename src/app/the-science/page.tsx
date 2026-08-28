@@ -1,8 +1,15 @@
 import React from "react";
+import type { Metadata } from "next";
 import Lung from "../components/vectors/Lung";
 import VagusNerve from "../components/vectors/VagusNerve";
 import HeartRate from "../components/vectors/HeartRate";
 import BP from "../components/vectors/BP";
+
+export const metadata: Metadata = {
+	title: "The Science of Box Breathing | Boxed Breathing Timer",
+	description:
+		"Learn how the four-part box-breathing pattern may support relaxation, focus, and stress management.",
+};
 
 const page = () => {
 	return (
