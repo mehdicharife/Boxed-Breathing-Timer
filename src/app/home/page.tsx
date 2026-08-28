@@ -1,12 +1,13 @@
 import React from "react";
-import type { Metadata } from "next";
 import BoxedBreathinSimulator from "../components/BoxedBreathinSimulator";
+import { createPageMetadata } from "../social-metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
 	title: "Box Breathing Timer (4-4-4-4) | Boxed Breathing Timer",
 	description:
 		"Follow a guided box-breathing timer with visual pacing and optional calming sounds to pause, focus, and reset.",
-};
+	pathname: "/home",
+});
 
 const page = () => {
 	return (

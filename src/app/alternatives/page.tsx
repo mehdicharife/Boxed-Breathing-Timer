@@ -1,5 +1,4 @@
 import React from "react";
-import type { Metadata } from "next";
 import SighIcon from "../components/vectors/Sigh";
 import BinauralBeatsIcon from "../components/vectors/BinauralBeatsIcon";
 import ColdExposureIcon from "../components/vectors/ColdExposureIcon";
@@ -8,12 +7,14 @@ import BilateralStimulationIcon from "../components/vectors/BilateralStimulation
 import AlternativeCard, { Alternative } from "../components/AlternativeCard";
 import AlternativeSection from "../components/AlternativeSection";
 import { GoAlert } from "react-icons/go";
+import { createPageMetadata } from "../social-metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
 	title: "Stress-Relief Alternatives | Boxed Breathing Timer",
 	description:
 		"Explore physiological sighs, humming, calming sounds, bilateral stimulation, and other real-time stress-relief techniques.",
-};
+	pathname: "/alternatives",
+});
 
 const alternatives: Alternative[] = [
 	{
