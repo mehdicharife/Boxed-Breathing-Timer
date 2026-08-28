@@ -70,25 +70,17 @@ const page = () => {
 					parasympathetic nervous system, helping to calm the
 					body and mind. The technique is easy to do anywhere and
 					requires no special equipment—just your breath and a
-					few moments of attention
+					few moments of attention.
 				</p>
 
 				<p className="text-sm text-justify mb-6">
-					Boxed breathing, also called square breathing, is a
-					simple relaxation technique that involves breathing in
-					a rhythmic pattern to reduce stress and improve focus.
-					The method gets its name from visualizing a box: you
-					breathe in for four counts, hold your breath for four
-					counts, exhale for four counts, and hold empty for four
-					counts, then repeat. This equal timing creates a
-					&ldquo;box&quot; shape when you imagine each side
-					representing one step. It&apos;s commonly used by
-					athletes, military personnel, and anyone dealing with
-					anxiety or stress because it activates the
-					parasympathetic nervous system, helping to calm the
-					body and mind. The technique is easy to do anywhere and
-					requires no special equipment—just your breath and a
-					few moments of attention
+					The four equal phases can make the exercise easy to
+					remember and repeat. Start with a pace that feels
+					comfortable rather than forcing a four-count hold; if you
+					feel dizzy, uncomfortable, or short of breath, return to
+					normal breathing. Like other relaxation practices, its
+					value is in giving attention a simple, deliberate rhythm
+					during a pause in the day.
 				</p>
 
 				<div className="hidden min-[700px]:flex gap-x-12 mb-12 ">
@@ -156,7 +148,7 @@ const page = () => {
 					While the science behind box breathing reveals complex
 					physiological mechanisms, the beauty of this technique
 					lies in its simplicity and accessibility. Whether
-					you&apos;sre preparing for a high-pressure
+					you&apos;re preparing for a high-pressure
 					presentation, recovering from a stressful encounter, or
 					simply taking a midday break to reset your nervous
 					system, box breathing offers a science-backed tool
