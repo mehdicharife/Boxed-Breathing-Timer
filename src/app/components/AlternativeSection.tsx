@@ -22,9 +22,9 @@ const AlternativeSection = ({
 			</div>
 
 			<div className="max-w-[45ch] [&>p]:text-sm">
-				<h1 className="text-2xl text-title font-bold mb-5">
+				<h2 className="text-2xl text-title font-bold mb-5">
 					{alternative.name}
-				</h1>
+				</h2>
 				<p className="mb-4">{alternative.description.p1}</p>
 				<p>{alternative.description.p2}</p>
 			</div>

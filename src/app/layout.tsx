@@ -107,9 +107,9 @@ export default function RootLayout({
 							<RxHamburgerMenu />
 						</label>
 					</nav>
-					<h1 className="hidden min-[530px]:block font-medium absolute right-10 text-title">
+					<p className="hidden min-[530px]:block font-medium absolute right-10 text-title">
 						Boxed Breathing Timer
-					</h1>
+					</p>
 				</header>
 
 				<main>{children}</main>

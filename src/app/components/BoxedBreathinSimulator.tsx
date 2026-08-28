@@ -200,9 +200,9 @@ const BoxedBreathinSimulator = () => {
 						className="border-2 border-outline rounded-sm flex flex-col justify-center mb-6 py-8 relative"
 					>
 						<div className="bg-[#005B70] text-white w-[30vw] h-[30vw] max-w-[110px] max-h-[110px] rounded-full flex items-center justify-center  m-[0_auto]">
-							<h1 className="text-sm font-medium">
+							<p className="text-sm font-medium">
 								{breathingInstruction}
-							</h1>
+							</p>
 						</div>
 						<span
 							ref={dotRef}
@@ -250,9 +250,9 @@ const BoxedBreathinSimulator = () => {
 
 	return (
 		<div className="mt-12">
-			<h1 className="text-xl font-medium text-center mb-5">
+			<h2 className="text-xl font-medium text-center mb-5">
 				Still feeling stressed?
-			</h1>
+			</h2>
 			<div className="flex flex-col justify-center items-center gap-y-4">
 				<a
 					onClick={() => setShowFinishMessage(false)}

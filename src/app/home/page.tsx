@@ -15,6 +15,7 @@ const page = () => {
 	return (
 		<div className="flex justify-center items-center mt-12">
 			<JsonLd data={webApplicationStructuredData} />
+			<h1 className="sr-only">Box Breathing Timer</h1>
 			<div>
 				<BoxedBreathinSimulator />
 			</div>
