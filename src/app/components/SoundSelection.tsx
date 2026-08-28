@@ -59,7 +59,7 @@ const SoundSelection = ({
 
 	useEffect(() => {
 		setSounds(
-			sounds.map((sound) => ({
+			initialSounds.map((sound) => ({
 				...sound,
 				audio: new Audio(`/audio/${sound.audioFileName}`),
 			})),
