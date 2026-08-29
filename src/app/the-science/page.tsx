@@ -6,6 +6,8 @@ import HeartRate from "../components/vectors/HeartRate";
 import BP from "../components/vectors/BP";
 import { createPageMetadata } from "../social-metadata";
 
+const articleContentClassName = "w-[85vw] min-[520px]:w-[50ch]";
+
 export const metadata = createPageMetadata({
 	title: "The Science of Box Breathing | Boxed Breathing Timer",
 	description:
@@ -16,7 +18,7 @@ export const metadata = createPageMetadata({
 const page = () => {
 	return (
 		<div className="flex justify-center pt-8 mb-5 ">
-			<div className="[&>p]:w-[85vw] min-[520px]:[&>p]:w-[50ch] [&>p]:text-sm [&>p]:text-paragraph flex flex-col items-center">
+			<div className="[&>p]:text-sm [&>p]:text-paragraph flex flex-col items-center">
 				<h1 className="text-2xl font-bold text-title text-center mb-8">
 					The Science Behind Boxed Breathing
 				</h1>
@@ -56,7 +58,9 @@ const page = () => {
 						</div>
 					</div>
 				</div>
-				<p className="text-sm text-justify mb-5">
+				<p
+					className={`${articleContentClassName} text-sm text-justify mb-5`}
+				>
 					Boxed breathing, also called square breathing, is a
 					simple relaxation technique that involves breathing in
 					a rhythmic pattern to reduce stress and improve focus.
@@ -74,14 +78,16 @@ const page = () => {
 					few moments of attention.
 				</p>
 
-				<p className="text-sm text-justify mb-6">
+				<p
+					className={`${articleContentClassName} text-sm text-justify mb-6`}
+				>
 					The four equal phases can make the exercise easy to
 					remember and repeat. Start with a pace that feels
-					comfortable rather than forcing a four-count hold; if you
-					feel dizzy, uncomfortable, or short of breath, return to
-					normal breathing. Like other relaxation practices, its
-					value is in giving attention a simple, deliberate rhythm
-					during a pause in the day.
+					comfortable rather than forcing a four-count hold; if
+					you feel dizzy, uncomfortable, or short of breath,
+					return to normal breathing. Like other relaxation
+					practices, its value is in giving attention a simple,
+					deliberate rhythm during a pause in the day.
 				</p>
 
 				<div className="hidden min-[700px]:flex gap-x-12 mb-12 ">
@@ -145,18 +151,22 @@ const page = () => {
 						</div>
 					</div>
 				</div>
-				<p className="text-justify mb-6">
+				<p
+					className={`${articleContentClassName} text-justify mb-6`}
+				>
 					While the science behind box breathing reveals complex
 					physiological mechanisms, the beauty of this technique
 					lies in its simplicity and accessibility. Whether
-					you&apos;re preparing for a high-pressure
-					presentation, recovering from a stressful encounter, or
-					simply taking a midday break to reset your nervous
-					system, box breathing offers a science-backed tool
-					that&apos;s always available to you.
+					you&apos;re preparing for a high-pressure presentation,
+					recovering from a stressful encounter, or simply taking
+					a midday break to reset your nervous system, box
+					breathing offers a science-backed tool that&apos;s
+					always available to you.
 				</p>
 
-				<p className="text-justify mb-6">
+				<p
+					className={`${articleContentClassName} text-justify mb-10`}
+				>
 					With consistent practice, many people find that box
 					breathing becomes an automatic response to stress - a
 					portable anchor they can rely on to restore calm and
@@ -166,8 +176,109 @@ const page = () => {
 					time.
 				</p>
 
+				<section
+					className={`self-center mb-8 flex flex-col items-center ${articleContentClassName}`}
+					aria-labelledby="sources-heading"
+				>
+					<h2
+						id="sources-heading"
+						className="text-lg font-medium text-title mb-3 w-full"
+					>
+						References
+					</h2>
+					<p className="w-full text-sm text-justify mb-5">
+						This article is for general education and is not
+						medical advice. Evidence on slow and structured
+						breathing is promising but varies by breathing
+						pattern, population, and outcome. See the sources
+						below for current research.
+					</p>
+					<ol className="w-full list-none p-0 space-y-3 text-sm">
+						<li className="flex gap-x-3 border-l-2 border-outline/30 pl-3">
+							<span className="font-medium text-title" aria-hidden="true">
+								1.
+							</span>
+							<p>
+								McAllister MJ, Martaindale MH, Sutton N, and Andersen JP
+								(2026). <cite>Box breathing and prolonged exhalation
+								reduces markers of physiological stress reactivity in
+								response to a virtual Trier social stress test.</cite>{" "}
+								<em>Comprehensive Psychoneuroendocrinology</em>, 27,
+								100360. {" "}
+								<a
+									href="https://pubmed.ncbi.nlm.nih.gov/42388906/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline underline-offset-2 hover:text-outline"
+								>
+									PubMed
+								</a>
+							</p>
+						</li>
+						<li className="flex gap-x-3 border-l-2 border-outline/30 pl-3">
+							<span className="font-medium text-title" aria-hidden="true">
+								2.
+							</span>
+							<p>
+								Laborde S, Allen MS, Borges U, et al. (2022). <cite>Effects
+								of voluntary slow breathing on heart rate and heart rate
+								variability: a systematic review and a meta-analysis.</cite>{" "}
+								<em>Neuroscience &amp; Biobehavioral Reviews</em>, 138,
+								104711. {" "}
+								<a
+									href="https://pubmed.ncbi.nlm.nih.gov/35623448/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline underline-offset-2 hover:text-outline"
+								>
+									PubMed
+								</a>
+							</p>
+						</li>
+						<li className="flex gap-x-3 border-l-2 border-outline/30 pl-3">
+							<span className="font-medium text-title" aria-hidden="true">
+								3.
+							</span>
+							<p>
+								National Center for Complementary and Integrative Health
+								(2022). <cite>Stress.</cite> National Institutes of Health.{" "}
+								<a
+									href="https://www.nccih.nih.gov/health/stress"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline underline-offset-2 hover:text-outline"
+								>
+									Read source
+								</a>
+							</p>
+						</li>
+						<li className="flex gap-x-3 border-l-2 border-outline/30 pl-3">
+							<span className="font-medium text-title" aria-hidden="true">
+								4.
+							</span>
+							<p>
+								Fincham GW, Strauss C, Montero-Marin J, and Cavanagh K
+								(2023). <cite>Effect of breathwork on stress and mental
+								health: a meta-analysis of randomised-controlled trials.</cite>{" "}
+								<em>Scientific Reports</em>, 13, 432. {" "}
+								<a
+									href="https://pubmed.ncbi.nlm.nih.gov/36624160/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline underline-offset-2 hover:text-outline"
+								>
+									PubMed
+								</a>
+							</p>
+						</li>
+					</ol>
+				</section>
+
 				<div className="flex justify-end min-[70ch]:w-[50ch] w-[90vw] mb-4 group">
-					<Link href="/home" className="flex items-center gap-x-5">
+					<Link
+						href="/home"
+						className="flex items-center gap-x-5"
+					>
 						<div className="w-12 h-0.5 bg-arrow relative rotate-180 group-hover:w-20  transition-[width] delay-150 duration-300 ease-in-out">
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>
 							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 -rotate-30  origin-top-right "></span>
