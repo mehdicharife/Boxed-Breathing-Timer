@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Poppins } from "next/font/google";
 import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
 import JsonLd from "./components/JsonLd";
+import NavigationActiveIndicator from "./components/NavigationActiveIndicator";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Analytics } from "@vercel/analytics/next";
 import { websiteStructuredData } from "./structured-data";
@@ -47,6 +48,7 @@ export default function RootLayout({
 			>
 				<header className="flex items-center relative h-18">
 					<DarkModeSwitchButton />
+					<NavigationActiveIndicator />
 
 					<nav className="flex flex-col top-15 min-[940px]:top-auto right-12 min-[530px]:right-65 invisible has-[:checked]:flex has-[:checked]:visible min-[940px]:visible max-[940px]:has-[:checked]:[&_a]:px-4 max-[940px]:[&>ul]:py-3 min-[940px]:bg-transparent min-[940px]:p-0 min-[940px]:flex-row gap-x-6 min-[1020px]:gap-x-12 grow absolute min-[940px]:left-1/2 min-[940px]:-translate-x-1/2 [&_a]:text-title text-[13.5px] [&_a]:font-medium dark:[&_a]:font-medium [&_a]:uppercase [&_a]:tracking-wider min-[940px]:right-auto max-[940px]:has-[:checked]:[&>ul]:bg-[#acdbe4] dark:max-[940px]:has-[:checked]:[&>ul]:bg-[#3e5357] max-[940px]:has-[:checked]:[&>ul]:hover:bg-[#cee8ea] dark:max-[940px]:has-[:checked]:[&>ul]:hover:bg-[#003c45] has-[:checked]:[&_a]:w-full has-[:checked]:[&_a]:block [&_li]:w-full z-50">
 						<input
@@ -58,6 +60,7 @@ export default function RootLayout({
 							<li>
 								<Link
 									href="/home"
+									data-primary-nav-link
 									className="relative group"
 								>
 									Home
@@ -69,6 +72,7 @@ export default function RootLayout({
 							<li>
 								<Link
 									href="/the-science"
+									data-primary-nav-link
 									className="group relative"
 								>
 									The science
@@ -80,6 +84,7 @@ export default function RootLayout({
 							<li>
 								<Link
 									href="/alternatives"
+									data-primary-nav-link
 									className="group relative"
 								>
 									Alternatives
@@ -155,16 +160,6 @@ export default function RootLayout({
 					</nav>
 				</footer>
 
-				<script
-					dangerouslySetInnerHTML={{
-						__html: `
-							const path = window.location.pathname;
-							const navLinkElement = document.querySelector('a[href=' + '"' +  path + '"'  + ']');
-							console.log('a[href=' + '"' +  path + '"'  + ']')
-							navLinkElement.querySelector('span').style.width = '100%';
-           				 `,
-					}}
-				/>
 				<Analytics />
 			</body>
 		</html>
