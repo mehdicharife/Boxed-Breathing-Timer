@@ -56,6 +56,8 @@ const SoundSelection = ({
 	const [sounds, setSounds] = useState(initialSounds);
 	const [soundSelectionVisible, setSoundSelectionVisible] = useState(false);
 	const [selectedSound, setSelectedSound] = useState<Sound | undefined>();
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [hasPlaybackStarted, setHasPlaybackStarted] = useState(false);
 
 	useEffect(() => {
 		setSounds(
@@ -66,60 +68,99 @@ const SoundSelection = ({
 		);
 	}, []);
 
+	useEffect(() => {
+		const audio = selectedSound?.audio;
+		if (!audio) {
+			setIsPlaying(false);
+			setHasPlaybackStarted(false);
+			return;
+		}
+
+		const syncPlaybackState = () => {
+			setIsPlaying(!audio.paused);
+			setHasPlaybackStarted(audio.currentTime > 0 || !audio.paused);
+		};
+
+		syncPlaybackState();
+		audio.addEventListener("play", syncPlaybackState);
+		audio.addEventListener("pause", syncPlaybackState);
+		audio.addEventListener("ended", syncPlaybackState);
+
+		return () => {
+			audio.removeEventListener("play", syncPlaybackState);
+			audio.removeEventListener("pause", syncPlaybackState);
+			audio.removeEventListener("ended", syncPlaybackState);
+		};
+	}, [selectedSound]);
+
 	const handleSoundSelection = (sound: Sound) => {
-		setSelectedSound(sound);
-		setSoundSelectionVisible(false);
 		onSoundSelection(sound);
+		setSelectedSound(sound);
+		setIsPlaying(!sound.audio?.paused);
+		setHasPlaybackStarted(
+			Boolean(sound.audio && (sound.audio.currentTime > 0 || !sound.audio.paused)),
+		);
+		setSoundSelectionVisible(false);
+	};
+
+	const togglePlayback = () => {
+		const audio = selectedSound?.audio;
+		if (!audio) return;
+
+		if (audio.paused) {
+			setIsPlaying(true);
+			setHasPlaybackStarted(true);
+			void audio.play().catch(() => setIsPlaying(false));
+		} else {
+			setIsPlaying(false);
+			audio.pause();
+		}
 	};
 
 	return (
 		<div className="relative">
-			<button
-				className="w-full border-2  py-1.5 px-2 flex justify-between items-center hover:border-outline-hover mt-4 mb-3 cursor-pointer"
-				onClick={() =>
-					setSoundSelectionVisible(!soundSelectionVisible)
-				}
-			>
+			<div className="relative w-full border-2 py-1.5 px-2 flex justify-between items-center hover:border-outline-hover mt-4 mb-3">
 				{!selectedSound ? (
-					<>
+					<button
+						type="button"
+						className="w-full flex justify-between items-center cursor-pointer"
+						onClick={() =>
+							setSoundSelectionVisible(!soundSelectionVisible)
+						}
+					>
 						<GiMusicalScore size="21" />
 						<p className="text-[13px]">Select a sound</p>
-					</>
+						<MdArrowDropDown size="22" />
+					</button>
 				) : (
-					<>
-						{selectedSound.audio?.currentTime === 0 ? (
-							<selectedSound.icon
-								size="21"
-								className="shrink-0"
-							/>
-						) : (
+					<div className="flex justify-between w-full">
+						{hasPlaybackStarted ? (
 							<button
-								title="pause"
+								type="button"
+								title={isPlaying ? "Pause" : "Play"}
 								className="cursor-pointer hover:text-outline"
-								onClick={(event) => {
-									if (!selectedSound.audio!.paused) {
-										selectedSound.audio!.pause();
-									} else {
-										selectedSound.audio!.play();
-									}
-									event.stopPropagation();
-								}}
+								onClick={togglePlayback}
 							>
-								{selectedSound?.audio!.paused ? (
-									<IoPlay />
-								) : (
-									<IoMdPause />
-								)}
+								{isPlaying ? <IoMdPause /> : <IoPlay />}
 							</button>
+						) : (
+							<selectedSound.icon size="21" className="shrink-0" />
 						)}
-						<p className="text-[13px]">
-							{selectedSound.name}
-						</p>
-					</>
+						<button
+							type="button"
+							className="flex grow justify-end items-center ml-4 cursor-pointer"
+							onClick={() =>
+								setSoundSelectionVisible(!soundSelectionVisible)
+							}
+						>
+							<p className="absolute left-1/2 -translate-x-1/2 text-[13px]">
+								{selectedSound.name}
+							</p>
+							<MdArrowDropDown size="22" />
+						</button>
+					</div>
 				)}
-
-				<MdArrowDropDown size="22" />
-			</button>
+			</div>
 			<div
 				className={`flex flex-col bg-[#EBF7F8] dark:bg-[#1f3638] rounded-sm shadow-[4px_4px_6px_2px_rgba(0,_0,_0,_0.1)] absolute z-50 max-h-[220px] overflow-y-scroll ${soundSelectionVisible ? "opacity-100" : "opacity-0"} transition-opacity duration-400`}
 			>
