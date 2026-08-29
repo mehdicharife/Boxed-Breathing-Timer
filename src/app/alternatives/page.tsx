@@ -21,7 +21,7 @@ const alternatives: Alternative[] = [
 		name: "The Physiological Sigh",
 		icon: SighIcon,
 		description: {
-			p1: "The physiological sigh is a natural breathing pattern—two quick inhales followed by a long exhale—that reinflates air sacs in your lungs. Your body does this automatically throughout the day to maintain optimal oxygen exchange.",
+			p1: "The physiological sigh is a natural breathing pattern: two quick inhales followed by a long exhale. It reinflates air sacs in your lungs. Your body does this automatically throughout the day to maintain optimal oxygen exchange.",
 			p2: "You can use this pattern intentionally to reduce stress fast. Take two inhales through your nose, then exhale slowly through your mouth. This activates your relaxation response and restores calm within seconds.",
 		},
 		cardWidth: "120",
@@ -32,7 +32,7 @@ const alternatives: Alternative[] = [
 		name: "Cold Exposure",
 		icon: ColdExposureIcon,
 		description: {
-			p1: "Cold exposure is a powerful tool for interrupting stress responses in real time. When combined with breath holding, cold water on your face activates the diving reflex—an ancient mammalian response that immediately slows your heart rate and shifts your nervous system toward calm.",
+			p1: "Cold exposure is a powerful tool for interrupting stress responses in real time. When combined with breath holding, cold water on your face activates the diving reflex, an ancient mammalian response that immediately slows your heart rate and shifts your nervous system toward calm.",
 			p2: "Before trying this technique, note that it's not suitable for those with heart, respiratory, or circulatory conditions, and should never be practiced in deep water. To use cold exposure: fill a bowl with ice-cold water, take a breath, and submerge your face for 15-30 seconds while holding your breath. The cold water triggers an automatic drop in heart rate and blood pressure, breaking the cycle of panic or acute stress. This technique provides one of the fastest physiological ways to regain control when overwhelmed.",
 		},
 		cardWidth: "90",

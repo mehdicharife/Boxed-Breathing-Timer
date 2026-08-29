@@ -70,7 +70,7 @@ const page = () => {
 					anxiety or stress because it activates the
 					parasympathetic nervous system, helping to calm the
 					body and mind. The technique is easy to do anywhere and
-					requires no special equipment—just your breath and a
+					requires no special equipment - just your breath and a
 					few moments of attention.
 				</p>
 
@@ -158,7 +158,7 @@ const page = () => {
 
 				<p className="text-justify mb-6">
 					With consistent practice, many people find that box
-					breathing becomes an automatic response to stress—a
+					breathing becomes an automatic response to stress - a
 					portable anchor they can rely on to restore calm and
 					clarity whenever life demands it. In a world full of
 					complexity, sometimes the most powerful solutions are
