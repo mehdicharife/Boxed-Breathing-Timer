@@ -48,6 +48,16 @@ From a content-quality perspective, the exercise page is very thin for search. I
 
 **Recommendation:** Add concise static content below the timer: what box breathing is, the four phases and default timing, how to use the tool, a brief comfort/safety note, and relevant internal links to `/the-science` and `/alternatives`. Keep the copy factual and avoid promises of medical outcomes.
 
+**Suggested content and placement:** Preserve the timer as the page's immediate focal point. Place a calm, single-column server-rendered content block below the simulator, separated by generous top margin and constrained to roughly the same readable width as the surrounding content (rather than adding a large hero above the controls). This keeps the start action visible without scrolling while giving search engines and first-time visitors useful context immediately after the exercise.
+
+Use one visible page H1 above the timer—`Box Breathing Timer`—with one short, neutral sentence such as "Follow a guided 4-4-4-4 box-breathing pattern." Keep this introduction visually quiet (small supporting text, not a second hero). Below the simulator, use the following compact sequence:
+
+1. **How to use this timer** (`h2`): a four-item horizontal row on wider screens or short ordered list on mobile: “Breathe in,” “Hold,” “Breathe out,” and “Hold,” each for four counts. State that the user can follow the on-screen cue and may select an optional sound. This directly supports the core “4-4-4-4 box breathing timer” intent without repeating the metadata verbatim.
+2. **What is box breathing?** (`h2`): one brief paragraph identifying it as a paced, four-part breathing exercise, also known as square breathing. Do not claim that it treats anxiety, lowers blood pressure, or reliably changes a physiological measure; link the phrase “how box breathing works” to `/the-science` for the longer, referenced explanation.
+3. **A comfortable way to begin** (`h2`): one or two sentences advising visitors to breathe gently, reduce or skip the holds if uncomfortable, and stop if they feel unwell or light-headed. This is useful safety guidance without making the exercise page feel clinical; link to `/alternatives` with descriptive copy such as “explore other calming techniques.”
+
+Avoid a long FAQ, keyword lists, repeated calls to action, or large cards before the timer. Those would push the interactive tool below the fold and make a deliberately minimal experience feel promotional. If more detail is warranted later, keep it behind a native `<details>` disclosure labelled “Learn more about box breathing,” below the three core sections, so the essential copy remains visible and the page stays airy.
+
 ### High — improve health-content trust signals and citations
 
 **Evidence:** `/the-science` includes a visible disclaimer and linked references (`src/app/the-science/page.tsx:179` onward). `/alternatives` has a disclaimer (`src/app/alternatives/page.tsx:88`) but the technique descriptions make physiological and mental-health claims without citations, author information, reviewer information, or an updated date.
