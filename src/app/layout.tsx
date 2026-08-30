@@ -7,6 +7,7 @@ import NavigationActiveIndicator from "./components/NavigationActiveIndicator";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Analytics } from "@vercel/analytics/next";
 import { websiteStructuredData } from "./structured-data";
+import { siteUrl } from "./site-url";
 
 import "./globals.css"
 
@@ -15,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL(process.env.URL_SELF as string),
+	metadataBase: siteUrl,
 	alternates: {
 		canonical: "./",
 	},
