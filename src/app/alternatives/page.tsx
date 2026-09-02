@@ -102,7 +102,7 @@ const page = () => {
 					and anxiety
 				</h1>
 				<p className="text-sm font-normal">
-					While boxed breathing provides an accessible, real-time
+					While box breathing provides an accessible, real-time
 					stress management tool, research has demonstrated
 					comparable benefits from alternative techniques.
 				</p>

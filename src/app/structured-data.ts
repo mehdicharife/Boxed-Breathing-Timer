@@ -9,7 +9,7 @@ export const websiteStructuredData = {
 	name: "Boxed Breathing Timer",
 	url: siteUrlString,
 	description:
-		"A guided box-breathing timer with visual pacing and optional calming sounds.",
+		"A guided box breathing timer with visual pacing and optional calming sounds.",
 	inLanguage: "en",
 };
 

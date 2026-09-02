@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 		canonical: "./",
 	},
 	title: "Boxed Breathing Timer",
-	description: "An aid to the boxed breathing exercise",
+	description: "A guided timer for the box-breathing exercise",
 };
 
 export default function RootLayout({

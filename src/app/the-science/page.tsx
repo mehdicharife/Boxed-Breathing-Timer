@@ -20,7 +20,7 @@ const page = () => {
 		<div className="flex justify-center pt-8 mb-5 ">
 			<div className="[&>p]:text-sm [&>p]:text-paragraph flex flex-col items-center">
 				<h1 className="text-2xl font-bold text-title text-center mb-8">
-					The Science Behind Boxed Breathing
+					The Science Behind Box Breathing
 				</h1>
 				<div className="flex gap-x-[10%] mb-10 w-[85vw] max-w-[620px]">
 					<div className="relative w-[25%]">
@@ -61,7 +61,8 @@ const page = () => {
 				<p
 					className={`${articleContentClassName} text-sm text-justify mb-5`}
 				>
-					Boxed breathing, also called square breathing, is a
+					Box breathing, sometimes called boxed breathing or square
+					breathing, is a
 					simple relaxation technique that involves breathing in
 					a rhythmic pattern to reduce stress and improve focus.
 					The method gets its name from visualizing a box: you
