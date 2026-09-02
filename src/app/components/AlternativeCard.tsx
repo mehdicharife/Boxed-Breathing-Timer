@@ -7,6 +7,10 @@ export type Alternative = {
 		p1: string;
 		p2: string;
 	};
+	sources: {
+		label: string;
+		href: string;
+	}[];
 	cardWidth: string;
 	cardHeight: string;
     sectionId: string;

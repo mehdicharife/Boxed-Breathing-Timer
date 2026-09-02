@@ -27,6 +27,23 @@ const AlternativeSection = ({
 				</h2>
 				<p className="mb-4">{alternative.description.p1}</p>
 				<p>{alternative.description.p2}</p>
+				<div className="mt-5 border-t border-outline/30 pt-3 text-xs">
+					<h3 className="font-medium text-title">Sources</h3>
+					<ul className="mt-2 space-y-1">
+						{alternative.sources.map((source) => (
+							<li key={source.href}>
+								<a
+									href={source.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline underline-offset-2 hover:text-outline"
+								>
+									{source.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
 		</section>
 	);

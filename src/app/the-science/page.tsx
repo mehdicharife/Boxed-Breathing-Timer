@@ -88,7 +88,15 @@ const page = () => {
 					you feel dizzy, uncomfortable, or short of breath,
 					return to normal breathing. Like other relaxation
 					practices, its value is in giving attention a simple,
-					deliberate rhythm during a pause in the day.
+					deliberate rhythm during a pause in the day. If you
+					would prefer a different approach, you can{" "}
+					<Link
+						href="/alternatives"
+						className="font-medium text-secondary underline decoration-secondary/50 underline-offset-4 hover:text-primary dark:text-[#c0e1e9] dark:decoration-[#c0e1e9]/60 dark:hover:text-[#bffaff]"
+					>
+						explore other calming techniques
+					</Link>
+					.
 				</p>
 
 				<div className="hidden min-[700px]:flex gap-x-12 mb-12 ">
@@ -275,19 +283,21 @@ const page = () => {
 					</ol>
 				</section>
 
-				<div className="flex justify-end min-[70ch]:w-[50ch] w-[90vw] mb-4 group">
-					<Link
-						href="/home"
-						className="flex items-center gap-x-5"
-					>
-						<div className="w-12 h-0.5 bg-arrow relative rotate-180 group-hover:w-20  transition-[width] delay-150 duration-300 ease-in-out">
-							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right "></span>
-							<span className="absolute w-2.5 h-0.5 bg-arrow right-0 -rotate-30  origin-top-right "></span>
-						</div>
-						<div className="text-sm text-title italic font-medium group-hover:not-italic">
-							Go to the exercise page
-						</div>
-					</Link>
+				<div className="flex justify-end min-[70ch]:w-[50ch] w-[90vw] mb-4">
+					<div className="group">
+						<Link
+							href="/home"
+							className="flex items-center gap-x-5"
+						>
+							<div className="w-12 h-0.5 bg-arrow relative rotate-180 group-hover:w-20 transition-[width] delay-150 duration-300 ease-in-out">
+								<span className="absolute w-2.5 h-0.5 bg-arrow right-0 rotate-30 origin-bottom-right"></span>
+								<span className="absolute w-2.5 h-0.5 bg-arrow right-0 -rotate-30 origin-top-right"></span>
+							</div>
+							<div className="text-sm text-title italic font-medium group-hover:not-italic">
+								Go to the exercise page
+							</div>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>
