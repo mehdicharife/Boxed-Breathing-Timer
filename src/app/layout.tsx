@@ -5,6 +5,7 @@ import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
 import JsonLd from "./components/JsonLd";
 import NavigationActiveIndicator from "./components/NavigationActiveIndicator";
 import { RxHamburgerMenu } from "react-icons/rx";
+import SocialLinksDialog from "./components/SocialLinksDialog";
 import { Analytics } from "@vercel/analytics/next";
 import { websiteStructuredData } from "./structured-data";
 import { siteUrl } from "./site-url";
@@ -156,6 +157,11 @@ export default function RootLayout({
 								>
 									Support us
 								</a>
+							</li>
+						</ul>
+						<ul className="flex gap-x-5">
+							<li>
+								<SocialLinksDialog />
 							</li>
 						</ul>
 					</nav>
