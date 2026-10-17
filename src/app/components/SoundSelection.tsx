@@ -61,10 +61,12 @@ const SoundSelection = ({
 
 	useEffect(() => {
 		setSounds(
-			initialSounds.map((sound) => ({
-				...sound,
-				audio: new Audio(`/audio/${sound.audioFileName}`),
-			})),
+			initialSounds.map((sound) => {
+				const audio = new Audio();
+				audio.preload = "none";
+				audio.src = `/audio/${sound.audioFileName}`;
+				return { ...sound, audio };
+			}),
 		);
 	}, []);
 

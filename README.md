@@ -67,7 +67,23 @@ npm start
 
 # Lint the project
 npm run lint
+
+# Offline caching and update regression tests
+npm run test:pwa
+
+# Check the built app, install metadata, worker headers, and all offline URLs
+npm run test:pwa:build
 ```
+
+## Install and use offline
+
+Select **Install timer** below the timer's introductory text, or expand **Save this timer** after an exercise. The dialog offers the browser's installer when available and instructions for Safari, Android, and browsers without a direct install prompt. In an installed window, the same control opens **Offline settings**.
+
+The timer, guides, icons, scripts, styles, and fonts are saved automatically after the first successful online visit to a production build. The dialog confirms when the timer is ready offline. Choose **Download sounds** to save all five audio tracks (about 20 MB); interrupted downloads can be retried without downloading completed tracks again. Browser storage can be cleared or evicted, so reopen the dialog to check availability. PayPal, social links, and external research links still need a connection.
+
+`npm run build` generates `public/sw.js` from `scripts/service-worker.js` and the actual `.next/static` output. This generated file is ignored by Git; deploy with the complete `npm run build` command. Each build gets its own cache, and downloaded sounds survive app updates unless their audio files change. Updates wait until the visitor selects **Update now** or closes all app windows; an active breathing session is never automatically refreshed. One previous app cache is retained for other open windows.
+
+Service workers need HTTPS or localhost. `npm run dev` generates an audio-only worker so sound downloads can be tested without caching development pages or interfering with hot reload. Development output lives in `.next-dev`, separately from production output in `.next`. For full offline page loading, use `npm run build` followed by `npm start` on a different port. In a browser, wait for offline readiness, download sounds, disconnect, and reload `/home`. Check playback, navigation to the two guides, and relaunching the installed app. Test installation separately in Chrome/Edge, Safari on Mac, and mobile browsers. To check updates, leave the app open, serve a new build on the same origin, return to the app, and confirm it offers an update without interrupting the exercise.
 
 ## Configuration
 

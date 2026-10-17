@@ -37,6 +37,10 @@ const BoxedBreathinSimulator = () => {
 			counter.count === (4 * 4 * breathingIntervalInSeconds) / 1000
 		) {
 			if (counter.count === 0) {
+				clearTimeout(timeouts.current.breathingInstruction);
+				setBreathingInstruction("");
+				selectedSound?.audio?.pause();
+				if (selectedSound?.audio) selectedSound.audio.currentTime = 0;
 				setCounter({
 					count: (4 * 4 * breathingIntervalInSeconds) / 1000,
 				});
@@ -101,7 +105,7 @@ const BoxedBreathinSimulator = () => {
 
 		setBreathingInstruction(breathingInstructions[0]);
 		const now = new Date().getTime();
-		selectedSound?.audio?.play();
+		void selectedSound?.audio?.play().catch(() => {});
 		moveDot(now);
 	};
 
@@ -118,8 +122,8 @@ const BoxedBreathinSimulator = () => {
 			dotRef.current.style.left = "0";
 			dotRef.current.style.top = "0";
 		}, 10);
-		selectedSound!.audio!.pause();
-		selectedSound!.audio!.currentTime = 0;
+		selectedSound?.audio?.pause();
+		if (selectedSound?.audio) selectedSound.audio.currentTime = 0;
 	};
 
 	const moveDot = (startTime: number) => {
@@ -128,6 +132,7 @@ const BoxedBreathinSimulator = () => {
 		}
 
 		setTimeout(() => {
+			if (localStorage.getItem("resetting") === "true" || !dotRef.current || !boxRef.current) return;
 			let newX, newY;
 			const delta = new Date().getTime() - startTime;
 			switch (Math.floor(delta / breathingIntervalInSeconds) % 4) {

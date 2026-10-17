@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/build-service-worker.mjs --development",
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build --turbopack && node scripts/build-service-worker.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:pwa": "node --test tests/service-worker.test.mjs tests/install-guide.test.mjs",
+    "test:pwa:build": "node scripts/check-pwa-build.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

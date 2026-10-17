@@ -4,6 +4,7 @@ import BoxedBreathinSimulator from "../components/BoxedBreathinSimulator";
 import JsonLd from "../components/JsonLd";
 import { createPageMetadata } from "../social-metadata";
 import { webApplicationStructuredData } from "../structured-data";
+import { InstallTimerButton } from "../components/PwaProvider";
 
 export const metadata = createPageMetadata({
 	title: "Box Breathing Timer (4-4-4-4) | Boxed Breathing Timer",
@@ -23,6 +24,7 @@ const page = () => {
 				<p className="mt-2 text-sm leading-6 text-paragraph">
 					Follow a guided 4-4-4-4 box-breathing pattern.
 				</p>
+				<InstallTimerButton />
 			</header>
 
 			<div className="mt-7 flex justify-center">

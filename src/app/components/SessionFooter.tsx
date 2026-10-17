@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import { FiArrowUpRight, FiBookmark, FiHeart } from "react-icons/fi";
+import { InstallTimerButton } from "./PwaProvider";
 
 const SessionFooter = () => {
 	const [showInstructions, setShowInstructions] = useState(false);
@@ -88,6 +89,7 @@ const SessionFooter = () => {
 						instruction
 					)}
 				</p>
+				<div className="mt-2"><InstallTimerButton /></div>
 			</div>
 		</footer>
 	);

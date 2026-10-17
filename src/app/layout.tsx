@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 import DarkModeSwitchButton from "./components/DarkModeSwitchButton";
@@ -9,6 +9,7 @@ import SocialLinksDialog from "./components/SocialLinksDialog";
 import { Analytics } from "@vercel/analytics/next";
 import { websiteStructuredData } from "./structured-data";
 import { siteUrl } from "./site-url";
+import PwaProvider from "./components/PwaProvider";
 
 import "./globals.css"
 
@@ -23,6 +24,15 @@ export const metadata: Metadata = {
 	},
 	title: "Boxed Breathing Timer",
 	description: "A guided timer for the box-breathing exercise",
+	appleWebApp: { capable: true, title: "Breathe", statusBarStyle: "default" },
+	icons: { apple: "/icons/apple-touch-icon.png" },
+};
+
+export const viewport: Viewport = {
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "#ffffff" },
+		{ media: "(prefers-color-scheme: dark)", color: "#002628" },
+	],
 };
 
 export default function RootLayout({
@@ -52,6 +62,7 @@ export default function RootLayout({
 			<body
 				className={`${poppins.className} antialiased bg-surface text-onSurface relative`}
 			>
+				<PwaProvider>
 				<header className="flex items-center relative h-18">
 					<DarkModeSwitchButton />
 					<NavigationActiveIndicator />
@@ -172,6 +183,7 @@ export default function RootLayout({
 				</footer>
 
 				<Analytics />
+				</PwaProvider>
 			</body>
 		</html>
 	);
