@@ -4,8 +4,10 @@
 import { Sound } from "@/types/Sound";
 import Link from "next/link";
 import React, { RefObject, useEffect, useRef, useState } from "react";
+import { FiArrowRight, FiCheck, FiRotateCcw } from "react-icons/fi";
 
 import SoundSelection from "./SoundSelection";
+import SessionFooter from "./SessionFooter";
 import timify from "@/utils/timify";
 
 const breathingInstructions = ["Breathe In", "Hold", "Breathe Out", "Hold "];
@@ -250,25 +252,43 @@ const BoxedBreathinSimulator = () => {
 	}
 
 	return (
-		<div className="mt-12">
-			<h2 className="text-xl font-medium text-center mb-5">
-				Still feeling stressed?
-			</h2>
-			<div className="flex flex-col justify-center items-center gap-y-4">
-				<a
-					onClick={() => setShowFinishMessage(false)}
-					className="w-52 h-10 rounded-sm bg-primary hover:bg-primary-hover text-onPrimary text-sm  hover:cursor-pointer flex justify-center items-center"
+		<section
+			aria-labelledby="session-complete-title"
+			className="mb-8 w-full max-w-[380px] overflow-hidden rounded-2xl border border-outline/20 bg-surface shadow-[0_8px_32px_-20px_rgba(0,41,50,0.25)] dark:shadow-none"
+		>
+			<header className="px-6 pb-6 pt-7 text-center">
+				<span className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-[#e9f5f1] text-[#02713f] dark:bg-[#bffaff]/8 dark:text-[#bffaff]">
+					<FiCheck size={23} strokeWidth={1.8} aria-hidden="true" />
+				</span>
+				<h2
+					id="session-complete-title"
+					className="text-2xl font-medium tracking-tight text-title"
 				>
+					Session complete.
+				</h2>
+				<p className="mx-auto mt-2 max-w-[260px] text-sm leading-6 text-paragraph">
+					Take a moment before continuing your day.
+				</p>
+			</header>
+			<div className="flex flex-col gap-2 px-6 pb-6">
+				<button
+					type="button"
+					onClick={() => setShowFinishMessage(false)}
+					className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-medium text-onPrimary transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-arrow"
+				>
+					<FiRotateCcw size={16} aria-hidden="true" />
 					Redo the exercise
-				</a>
+				</button>
 				<Link
 					href="/alternatives"
-					className="w-52 h-10 hover:bg-secondary hover:text-onPrimary hover:border-none rounded-sm border-2 text-[13.5px] font-medium hover:cursor-pointer flex justify-center items-center"
+					className="flex min-h-11 items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm text-paragraph transition-colors hover:bg-primary/5 hover:text-title focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arrow dark:hover:bg-white/5"
 				>
 					Check other techniques
+					<FiArrowRight size={15} aria-hidden="true" />
 				</Link>
 			</div>
-		</div>
+			<SessionFooter />
+		</section>
 	);
 };
 
