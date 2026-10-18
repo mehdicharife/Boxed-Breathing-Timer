@@ -112,7 +112,7 @@ export default function RootLayout({
 						<ul className="flex gap-x-5">
 							<li>
 								<a
-									href="https://paypal.me/mehdicharife"
+									href="https://ko-fi.com/mehdicharife"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="group relative"
@@ -166,7 +166,7 @@ export default function RootLayout({
 						<ul className="flex gap-x-5">
 							<li>
 								<a
-									href="https://paypal.me/mehdicharife"
+									href="https://ko-fi.com/mehdicharife"
 									target="_blank"
 									rel="noopener noreferrer"
 								>

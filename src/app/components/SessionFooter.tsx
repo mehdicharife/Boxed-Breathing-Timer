@@ -52,7 +52,7 @@ const SessionFooter = () => {
 					<span>Save this timer</span>
 				</button>
 				<a
-					href="https://paypal.me/mehdicharife"
+					href="https://ko-fi.com/mehdicharife"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="flex min-h-11 items-center justify-center gap-1 rounded-md px-1 py-2 text-[11px] leading-5 text-paragraph transition-colors hover:bg-primary/5 hover:text-title focus-visible:outline-2 focus-visible:outline-arrow min-[400px]:text-xs dark:hover:bg-white/5"
@@ -60,7 +60,7 @@ const SessionFooter = () => {
 					<FiHeart size={14} aria-hidden="true" className="shrink-0" />
 					<span>Support this timer</span>
 					<FiArrowUpRight size={11} aria-hidden="true" className="shrink-0" />
-					<span className="sr-only">(PayPal, opens in a new tab)</span>
+					<span className="sr-only">(Ko-fi, opens in a new tab)</span>
 				</a>
 			</div>
 			<div
